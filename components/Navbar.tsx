@@ -22,12 +22,12 @@ export default function Navbar() {
   const router = useRouter()
   const currentPath = router.asPath
   return (
-    <div className="flex flex-1 items-center justify-end">
+    <div className="flex flex-1 items-end justify-end">
       <ul className="flex items-center gap-4">
         {links.map((link) => (
           <li
             key={link.label}
-            className="flex min-w-[125px] flex-1 justify-center whitespace-nowrap py-2"
+            className="flex min-w-[125px] flex-1 justify-center whitespace-nowrap"
           >
             <Link href={link.href}>
               <a

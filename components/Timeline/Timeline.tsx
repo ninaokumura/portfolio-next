@@ -37,8 +37,7 @@ const timeline = timelineItems.slice().reverse()
 
 export default function Timeline() {
   return (
-    <div className="w-full">
-      <h1 className="pb-8 text-center text-xl">My learning journey</h1>
+    <div className="grid w-full gap-4">
       <VerticalTimeline>
         {timeline.map((item) => {
           const TimelineIcon = icons[item.timelineIconId]

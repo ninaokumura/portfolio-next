@@ -4,7 +4,7 @@ import MainLayout from '../layouts/MainLayout'
 
 export default function Home() {
   return (
-    <MainLayout title="burra">
+    <MainLayout title="Nina Okumura">
       <Link href={'/about'}>
         <a>
           <TypewriterComponent />

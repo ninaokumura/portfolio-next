@@ -4,24 +4,38 @@ import Navbar from '../components/Navbar'
 import Logo from '../components/Logo'
 import { FaHeart } from 'react-icons/fa'
 
-import { ReactNode } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
+import clsx from 'clsx'
 
 type Props = { children: ReactNode; title: string }
 
 export default function MainLayout(props: Props) {
+  const [sticky, setSticky] = useState(false)
+
+  useEffect(() => {
+    document.addEventListener('scroll', () => {
+      setSticky(window.scrollY >= 100)
+    })
+  }, [])
   return (
     <>
       <Head>
         <title>{props.title}</title>
       </Head>
       <div className="flex min-h-screen flex-col bg-beige">
-        <header className="m-auto flex w-full max-w-6xl p-8">
-          <Link href="/">
-            <a>
-              <Logo />
-            </a>
-          </Link>
-          <Navbar />
+        <header
+          className={clsx('sticky top-0 z-10 transition-all ', {
+            'shadow-sm shadow-terracota': sticky,
+          })}
+        >
+          <div className="m-auto flex w-full max-w-6xl bg-beige p-8">
+            <Link href="/">
+              <a>
+                <Logo />
+              </a>
+            </Link>
+            <Navbar />
+          </div>
         </header>
         <main className="m-auto grid w-full max-w-6xl flex-1 place-items-center">
           {props.children}

@@ -15,6 +15,9 @@ module.exports = {
         brand: "'Roboto Mono', monospace'",
         typewriter: "'Cutive Mono', monospace",
       },
+      backgroundImage: {
+        brush: "url('//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=078080')",
+      },
     },
   },
   plugins: [],
