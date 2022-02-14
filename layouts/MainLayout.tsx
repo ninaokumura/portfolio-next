@@ -7,7 +7,10 @@ import { FaHeart } from 'react-icons/fa'
 import { ReactNode, useEffect, useState } from 'react'
 import clsx from 'clsx'
 
-type Props = { children: ReactNode; title: string }
+type Props = {
+  children: ReactNode
+  title: string
+}
 
 export default function MainLayout(props: Props) {
   const [sticky, setSticky] = useState(false)
@@ -24,14 +27,18 @@ export default function MainLayout(props: Props) {
       </Head>
       <div className="flex min-h-screen flex-col bg-beige">
         <header
-          className={clsx('sticky top-0 z-10 transition-all ', {
-            'shadow-sm shadow-terracota': sticky,
+          className={clsx('sticky top-0 z-10 text-terracota transition-all', {
+            'bg-terracota text-beige shadow-sm shadow-terracota': sticky,
           })}
         >
-          <div className="m-auto flex w-full max-w-6xl bg-beige p-8">
+          <div className="m-auto flex w-full max-w-6xl p-8">
             <Link href="/">
               <a>
-                <Logo />
+                <Logo
+                  className={clsx({
+                    'text-beige': sticky,
+                  })}
+                />
               </a>
             </Link>
             <Navbar />

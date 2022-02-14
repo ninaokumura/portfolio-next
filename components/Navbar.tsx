@@ -32,7 +32,7 @@ export default function Navbar() {
             <Link href={link.href}>
               <a
                 className={clsx(
-                  'cursor-pointer text-xl text-terracota opacity-90 transition-transform hover:scale-[102%] hover:font-bold',
+                  'cursor-pointer text-xl opacity-90 transition-transform hover:scale-[102%] hover:font-bold',
                   { 'font-bold': link.href === currentPath }
                 )}
               >
