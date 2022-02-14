@@ -13,6 +13,7 @@ module.exports = {
       fontFamily: {
         sans: "'Montserrat', sans-serif",
         brand: "'Roboto Mono', monospace'",
+        typewriter: "'Cutive Mono', monospace",
       },
     },
   },
