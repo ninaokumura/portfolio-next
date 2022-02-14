@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Navbar from '../components/Navbar'
+import Logo from '../components/Logo'
+import { FaHeart } from 'react-icons/fa'
 
 import { ReactNode } from 'react'
-import Logo from '../components/Logo'
 
 type Props = { children: ReactNode; title: string }
 
@@ -16,7 +17,9 @@ export default function MainLayout(props: Props) {
       <div className="flex min-h-screen flex-col bg-beige">
         <header className="m-auto flex w-full max-w-6xl p-8">
           <Link href="/">
-            <Logo />
+            <a>
+              <Logo />
+            </a>
           </Link>
           <Navbar />
         </header>
@@ -24,7 +27,9 @@ export default function MainLayout(props: Props) {
           {props.children}
         </main>
         <footer className="m-auto grid h-20 w-full max-w-6xl place-items-center">
-          Made with love
+          <div className="flex items-center gap-1 ">
+            Made with <FaHeart className="text-terracota" /> by Nina
+          </div>
         </footer>
       </div>
     </>
