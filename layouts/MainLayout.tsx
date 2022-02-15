@@ -20,6 +20,7 @@ export default function MainLayout(props: Props) {
       setSticky(window.scrollY >= 100)
     })
   }, [])
+
   return (
     <>
       <Head>
@@ -34,11 +35,7 @@ export default function MainLayout(props: Props) {
           <div className="m-auto flex w-full max-w-6xl p-8">
             <Link href="/">
               <a>
-                <Logo
-                  className={clsx({
-                    'text-beige': sticky,
-                  })}
-                />
+                <Logo />
               </a>
             </Link>
             <Navbar />
