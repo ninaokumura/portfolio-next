@@ -9,12 +9,12 @@ export default function About() {
     <MainLayout title="about">
       <div className="grid h-[calc(100vh-120px)] place-items-center">
         <Info />
-        <div className="-mb-16 grid place-items-center gap-6">
+        <div className="-mb-8 grid place-items-center gap-6">
           <h1 className="m-auto inline-flex text-center text-2xl font-semibold text-teal">
-            My learning journey
+            See my journey here
           </h1>
           <a href="#timeline">
-            <BsArrowDownCircle className="text-4xl text-terracota hover:animate-bounce" />
+            <BsArrowDownCircle className="text-5xl text-terracota hover:animate-bounce" />
           </a>
         </div>
       </div>

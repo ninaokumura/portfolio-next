@@ -18,7 +18,7 @@ import {
   FaGithub,
 } from 'react-icons/fa'
 import { SiJavascript, SiMongodb } from 'react-icons/si'
-import { GrCertificate } from 'react-icons/gr'
+import { GrCertificate, GrCodeSandbox } from 'react-icons/gr'
 import { IconType } from 'react-icons'
 
 const icons: Record<string, IconType> = {
@@ -31,6 +31,7 @@ const icons: Record<string, IconType> = {
   html: FaHtml5,
   javascript: SiJavascript,
   freecodecamp: FaFreeCodeCamp,
+  sandbox: GrCodeSandbox,
 }
 
 const timeline = timelineItems.slice().reverse()
@@ -45,7 +46,10 @@ export default function Timeline() {
             <VerticalTimelineElement
               key={item.title}
               date={item.duration}
-              iconStyle={{ background: '#f45d48', color: 'whiteSmoke' }}
+              iconStyle={{
+                background: '#399999',
+                color: 'whiteSmoke',
+              }}
               icon={<TimelineIcon />}
             >
               <h3 className="text-center text-xl font-bold">{item.title}</h3>
@@ -66,7 +70,11 @@ export default function Timeline() {
           )
         })}
         <VerticalTimelineElement
-          iconStyle={{ background: '#f45d48', color: 'whiteSmoke' }}
+          iconStyle={{
+            background: '#fff',
+            color: '#078080',
+            opacity: 1,
+          }}
           icon={<FaStar />}
         />
       </VerticalTimeline>

@@ -1,13 +1,25 @@
 export const timelineItems = [
   {
-    timelineIconId: 'react',
-    duration: 'Dec 2021 - present',
-    title: 'Learning React',
-    subtitle: 'Epic React - Kent C. Dodds',
+    timelineIconId: 'mongodb',
+    duration: 'Feb 22 - Feb 22',
+    title: 'MongoDB for JavaScript Developers',
+    subtitle: 'MongoDB',
     footerIcons: [
       {
         id: 'certificate',
-        url: 'https://university.mongodb.com/course_completion/9b45cc19-2167-4df2-af9d-eee734a4f764?utm_source=copy&utm_medium=social&utm_campaign=university_social_sharing',
+        url: 'https://university.mongodb.com/courses/M220JS/2021_December_14/completion',
+      },
+    ],
+  },
+  {
+    timelineIconId: 'react',
+    duration: 'Dec 2021 - Jan 22',
+    title: 'React Fundamentals',
+    subtitle: 'Kent C. Dodds',
+    footerIcons: [
+      {
+        id: 'github',
+        url: 'https://github.com/ninaokumura/react-fundamentals',
       },
     ],
   },
@@ -15,7 +27,7 @@ export const timelineItems = [
     timelineIconId: 'mongodb',
     duration: 'Dec 2021 - Dec 2021',
     title: 'MongoDB Basics',
-    subtitle: 'MongoDB University',
+    subtitle: 'MongoDB',
     footerIcons: [
       {
         id: 'certificate',
@@ -33,7 +45,7 @@ export const timelineItems = [
         id: 'certificate',
         url: 'https://udemy-certificate.s3.amazonaws.com/image/UC-790e0a3c-647c-4b2f-96dd-79d88b8d7b1a.jpg',
       },
-      { id: 'github', url: 'https://github.com/ninaokumura' },
+      { id: 'github', url: 'https://github.com/ninaokumura/natours-app' },
     ],
   },
   {
@@ -41,7 +53,12 @@ export const timelineItems = [
     duration: 'Aug 2021 - Oct 2021',
     title: 'Enspiral Dev Academy',
     subtitle: 'Coding Bootcamp',
-    footerIcons: [{ id: 'github', url: 'https://github.com/ninaokumura' }],
+    footerIcons: [
+      {
+        id: 'github',
+        url: 'https://github.com/ninaokumura/ninaokumura.github.io',
+      },
+    ],
   },
   {
     timelineIconId: 'html',
@@ -53,7 +70,7 @@ export const timelineItems = [
         id: 'certificate',
         url: 'https://www.udemy.com/certificate/UC-f206e098-0f0a-4eb2-b3cd-42e896014218/',
       },
-      { id: 'github', url: 'https://github.com/ninaokumura' },
+      { id: 'github', url: 'https://github.com/ninaokumura/omnifood' },
     ],
   },
   {
@@ -66,7 +83,7 @@ export const timelineItems = [
         id: 'certificate',
         url: 'https://www.udemy.com/certificate/UC-554a1c02-21bb-415f-9893-dc77a85b2630/',
       },
-      { id: 'github', url: 'https://github.com/ninaokumura' },
+      { id: 'github', url: 'https://github.com/ninaokumura/forkify-app' },
     ],
   },
   {
@@ -79,7 +96,10 @@ export const timelineItems = [
         id: 'certificate',
         url: 'https://www.freecodecamp.org/certification/elaine-okumura/responsive-web-design',
       },
-      { id: 'github', url: 'https://github.com/ninaokumura' },
+      {
+        id: 'sandbox',
+        url: 'https://codesandbox.io/dashboard/all/FreeCodeCamp?workspace=28f95194-dcbc-4c8f-822a-3d489b1f4a1b',
+      },
     ],
   },
 ]
