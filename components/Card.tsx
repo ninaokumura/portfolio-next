@@ -11,7 +11,7 @@ type CardProps = {
 
 function Card(props: CardProps) {
   return (
-    <div className="grid w-full place-items-center gap-2 rounded bg-beige p-4 shadow-xl">
+    <div className="grid w-full place-items-center gap-2 rounded bg-beige p-4 shadow-2xl">
       {props.children}
     </div>
   )
@@ -23,11 +23,7 @@ Card.Title = function (props: CardProps) {
 
 Card.Img = function (props: ImgProps) {
   return (
-    <img
-      className="h-32 w-full rounded border"
-      src={props.src}
-      alt={props.alt}
-    ></img>
+    <img className=" h-48 w-80 rounded" src={props.src} alt={props.alt}></img>
   )
 }
 
