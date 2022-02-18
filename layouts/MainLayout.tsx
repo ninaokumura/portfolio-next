@@ -41,7 +41,7 @@ export default function MainLayout(props: Props) {
             <Navbar />
           </div>
         </header>
-        <main className="m-auto grid w-full max-w-6xl flex-1 place-items-center">
+        <main className="m-auto grid w-full max-w-6xl flex-1 place-items-center p-8">
           {props.children}
         </main>
         <footer className="m-auto grid h-20 w-full max-w-6xl place-items-center">
