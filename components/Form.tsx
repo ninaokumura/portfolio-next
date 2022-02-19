@@ -61,7 +61,7 @@ export default function ContactForm() {
         className="mb-4 rounded bg-beige px-8 pt-6 pb-8 "
         name="contact"
         method="POST"
-        action="/contact"
+        action="/success"
         data-netlify="true"
       >
         <p>
