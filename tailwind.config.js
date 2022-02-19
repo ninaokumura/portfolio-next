@@ -12,7 +12,7 @@ module.exports = {
       colors: { beige: '#f8f5f2', terracota: '#f45d48', teal: '#078080' },
       fontFamily: {
         sans: "'Montserrat', sans-serif",
-        brand: "'Roboto Mono', monospace'",
+        brand: "'Roboto Mono', monospace",
         typewriter: "'Cutive Mono', monospace",
       },
       backgroundImage: {
