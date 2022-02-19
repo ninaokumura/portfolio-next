@@ -17,21 +17,21 @@ function Card(props: CardProps) {
   )
 }
 
-Card.Title = function (props: CardProps) {
+Card.Title = function Title(props: CardProps) {
   return <div className="pb-4 text-lg">{props.children}</div>
 }
 
-Card.Img = function (props: ImgProps) {
+Card.Img = function Img(props: ImgProps) {
   return (
     <img className=" h-48 w-80 rounded" src={props.src} alt={props.alt}></img>
   )
 }
 
-Card.Body = function (props: CardProps) {
+Card.Body = function Body(props: CardProps) {
   return <div className="min-h-[5rem] text-base">{props.children}</div>
 }
 
-Card.Text = function (props: CardProps) {
+Card.Text = function Text(props: CardProps) {
   return <div className="text-sm">{props.children}</div>
 }
 

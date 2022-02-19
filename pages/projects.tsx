@@ -81,7 +81,7 @@ export default function Projects() {
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((el) => (
-            <Card>
+            <Card key={el.title}>
               <Card.Img src={el.img} />
               <Card.Body>
                 <Card.Title>{el.title}</Card.Title>
