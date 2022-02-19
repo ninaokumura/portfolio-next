@@ -57,70 +57,74 @@ export default function ContactForm() {
 
   return (
     <div className="grid grid-cols-2 shadow-lg">
-      <div className="form-message">
-        {submitError && (
-          <div className="error-message message">
-            Failed to submit form: {submitError}
-          </div>
-        )}
-        {submitted && (
-          <div className="success-message message">
-            Thanks for reaching out!
-          </div>
-        )}
+      <div className="relative">
+        <div className=" absolute -top-2 grid w-full place-items-center text-lg font-semibold">
+          {submitError && (
+            <div className="rounded bg-gray-200 p-3 text-terracota">
+              Failed to submit form: {submitError}
+            </div>
+          )}
+          {submitted && (
+            <div className="rounded bg-gray-200 p-3 text-teal">
+              Thanks for reaching out!
+            </div>
+          )}
+        </div>
+        <form
+          className="mb-4 rounded bg-beige px-8 pt-6 pb-8 "
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          onSubmit={handleSubmit}
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <p>
+            <label htmlFor="yourname">Name</label> <br />
+            <Input
+              type="text"
+              name="name"
+              value={name}
+              id="yourname"
+              onChange={handleNameChange}
+            />
+          </p>
+          <p>
+            <label htmlFor="youremail">Email</label> <br />
+            <Input
+              type="email"
+              name="email"
+              value={email}
+              id="youremail"
+              onChange={handleEmailChange}
+            />
+          </p>
+          <p>
+            <label htmlFor="yourmessage">Message</label> <br />
+            <TextArea
+              name="message"
+              value={message}
+              id="yourmessage"
+              onChange={handleMessageChange}
+              className="h-56"
+            />
+          </p>
+          <p>
+            <Button className="w-full" type="submit">
+              Send
+            </Button>
+          </p>
+        </form>
       </div>
-      <form
-        className="mb-4 rounded bg-beige px-8 pt-6 pb-8 "
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        onSubmit={handleSubmit}
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <p>
-          <label htmlFor="yourname">Name</label> <br />
-          <Input
-            type="text"
-            name="name"
-            value={name}
-            id="yourname"
-            onChange={handleNameChange}
-          />
-        </p>
-        <p>
-          <label htmlFor="youremail">Email</label> <br />
-          <Input
-            type="email"
-            name="email"
-            value={email}
-            id="youremail"
-            onChange={handleEmailChange}
-          />
-        </p>
-        <p>
-          <label htmlFor="yourmessage">Message</label> <br />
-          <TextArea
-            name="message"
-            value={message}
-            id="yourmessage"
-            onChange={handleMessageChange}
-            className="h-56"
-          />
-        </p>
-        <p>
-          <Button className="w-full" type="submit">
-            Send
-          </Button>
-        </p>
-      </form>
 
       <div className="grid place-items-center">
-        <div className="flex flex-col gap-2 text-left">
+        <div className="flex flex-col gap-2 pb-8">
           <h2 className="m-auto bg-brush px-8 py-1 text-3xl text-beige">
             Get in touch
           </h2>
-          <h3 className="contact">email:elaineokumura@gmail.com</h3>
-          <h3 className="contact">phone: (+64) 027 548 7193</h3>
+          <div className="p-4 font-semibold">
+            <h3 className="pb-2">email: elaineokumura@gmail.com</h3>
+            <h3>phone: (+64) 027 548 7193</h3>
+          </div>
           <Button>Download resume</Button>
         </div>
       </div>
