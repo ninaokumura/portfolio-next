@@ -28,19 +28,19 @@ export default function ContactForm() {
     setMessage(event.target.value)
   }
 
-  // const handleSubmit = (event: any) => {
-  //   event.preventDefault()
-  //   const formData = { name, email, message }
-  //   console.log(formData)
+  const handleSubmit = (event: any) => {
+    event.preventDefault()
+    const formData = { name, email, message }
+    console.log(formData)
 
-  //   fetch('/', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //     body: encode({ 'form-name': 'contact', ...formData }),
-  //   })
-  //     .then(() => setSubmitted(true))
-  //     .catch((error) => setSubmitError(error.message))
-  // }
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...formData }),
+    })
+      .then(() => setSubmitted(true))
+      .catch((error) => setSubmitError(error.message))
+  }
 
   // const isFormValid = useMemo(() => {
   //   if (name === '') {
@@ -57,12 +57,24 @@ export default function ContactForm() {
 
   return (
     <div className="grid grid-cols-2 shadow-lg">
+      <div className="form-message">
+        {submitError && (
+          <div className="error-message message">
+            Failed to submit form: {submitError}
+          </div>
+        )}
+        {submitted && (
+          <div className="success-message message">
+            Thanks for reaching out!
+          </div>
+        )}
+      </div>
       <form
         className="mb-4 rounded bg-beige px-8 pt-6 pb-8 "
         name="contact"
         method="POST"
-        action="/success"
         data-netlify="true"
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
         <p>
