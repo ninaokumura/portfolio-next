@@ -1,18 +1,18 @@
 import React, { ReactNode } from 'react'
 import clsx from 'clsx'
 
-type Props = {
-  children: ReactNode
-  className?: string
+type Props = JSX.IntrinsicElements['button'] & {
+  // Add more properties here...
 }
 
-function Button(props: Props) {
+function Button({ className, ...props }: Props) {
   return (
     <button
       className={clsx(
         'rounded bg-black px-4 py-2 text-beige transition-colors hover:bg-teal',
-        props.className
+        className
       )}
+      {...props}
     >
       {props.children}
     </button>
