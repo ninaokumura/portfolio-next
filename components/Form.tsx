@@ -28,32 +28,32 @@ export default function ContactForm() {
     setMessage(event.target.value)
   }
 
-  const handleSubmit = (event: any) => {
-    event.preventDefault()
-    const formData = { name, email, message }
-    console.log(formData)
+  // const handleSubmit = (event: any) => {
+  //   event.preventDefault()
+  //   const formData = { name, email, message }
+  //   console.log(formData)
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...formData }),
-    })
-      .then(() => setSubmitted(true))
-      .catch((error) => setSubmitError(error.message))
-  }
+  //   fetch('/', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //     body: encode({ 'form-name': 'contact', ...formData }),
+  //   })
+  //     .then(() => setSubmitted(true))
+  //     .catch((error) => setSubmitError(error.message))
+  // }
 
-  const isFormValid = useMemo(() => {
-    if (name === '') {
-      return false
-    }
-    if (email === '') {
-      return false
-    }
-    if (message === '') {
-      return false
-    }
-    return true
-  }, [name, email, message])
+  // const isFormValid = useMemo(() => {
+  //   if (name === '') {
+  //     return false
+  //   }
+  //   if (email === '') {
+  //     return false
+  //   }
+  //   if (message === '') {
+  //     return false
+  //   }
+  //   return true
+  // }, [name, email, message])
 
   return (
     <div className="grid grid-cols-2 shadow-lg">
@@ -61,8 +61,8 @@ export default function ContactForm() {
         className="mb-4 rounded bg-beige px-8 pt-6 pb-8 "
         name="contact"
         method="POST"
-        onSubmit={handleSubmit}
-        data-netlify
+        action="/contact"
+        data-netlify="true"
       >
         <p>
           <label htmlFor="yourname">Name</label> <br />

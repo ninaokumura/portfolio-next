@@ -18,11 +18,6 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <form name="contact" data-netlify netlify-honeypot="bot-field" hidden>
-          <input type="text" name="name" />
-          <input type="email" name="email" />
-          <textarea name="message"></textarea>
-        </form>
       </body>
     </Html>
   )
