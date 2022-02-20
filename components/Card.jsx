@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 function Card(props) {
   return (
@@ -14,7 +15,9 @@ Card.Title = function Title(props) {
 
 Card.Img = function Img(props) {
   return (
-    <img className="h-48 w-80 rounded" src={props.src} alt={props.alt}></img>
+    <div className="h-48 w-80 overflow-hidden rounded">
+      <Image layout="responsive" src={props.src} alt={props.alt}></Image>
+    </div>
   )
 }
 

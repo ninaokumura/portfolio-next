@@ -1,16 +1,16 @@
 import React from 'react'
 import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa'
 import { GrCodeSandbox } from 'react-icons/gr'
+import Image from 'next/image'
+import avatarImg from '../public/images/me.jpg'
 
 export default function Info() {
   return (
     <div className="grid grid-cols-2">
       <div className="grid place-items-center">
-        <img
-          className="w-7/12 rounded-xl transition-all ease-in-out hover:-rotate-12"
-          src="/images/me.jpg"
-          alt="avatar"
-        />
+        <div className="w-8/12 overflow-hidden rounded-xl transition-all ease-in-out hover:-rotate-12">
+          <Image layout="responsive" src={avatarImg} alt="avatar" />
+        </div>
       </div>
 
       <div className="grid place-items-center">
