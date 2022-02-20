@@ -21,6 +21,7 @@ const links = [
 export default function Navbar() {
   const router = useRouter()
   const currentPath = router.asPath
+
   return (
     <div className="flex flex-1 items-end justify-end">
       <ul className="flex items-center gap-4">

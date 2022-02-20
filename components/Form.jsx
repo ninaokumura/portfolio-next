@@ -1,9 +1,10 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState } from 'react'
+
 import Input from './Input'
 import TextArea from './TextArea'
 import Button from './Button'
 
-const encode = (data: any) => {
+const encode = (data) => {
   return Object.keys(data)
     .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
@@ -16,19 +17,19 @@ export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState('')
 
-  const handleNameChange = (event: any) => {
+  const handleNameChange = (event) => {
     setName(event.target.value)
   }
 
-  const handleEmailChange = (event: any) => {
+  const handleEmailChange = (event) => {
     setEmail(event.target.value)
   }
 
-  const handleMessageChange = (event: any) => {
+  const handleMessageChange = (event) => {
     setMessage(event.target.value)
   }
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
     const formData = { name, email, message }
     console.log(formData)

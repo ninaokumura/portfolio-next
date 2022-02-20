@@ -1,11 +1,7 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import clsx from 'clsx'
 
-type Props = JSX.IntrinsicElements['button'] & {
-  // Add more properties here...
-}
-
-function Button({ className, ...props }: Props) {
+function Button({ className, ...props }) {
   return (
     <button
       className={clsx(

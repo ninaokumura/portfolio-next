@@ -1,9 +1,6 @@
-import { timelineItems } from './Timeline.data'
-
 import {
   VerticalTimeline,
   VerticalTimelineElement,
-  // @ts-ignore
 } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
 
@@ -19,9 +16,10 @@ import {
 } from 'react-icons/fa'
 import { SiJavascript, SiMongodb } from 'react-icons/si'
 import { GrCertificate, GrCodeSandbox } from 'react-icons/gr'
-import { IconType } from 'react-icons'
 
-const icons: Record<string, IconType> = {
+import { timelineItems } from './Timeline.data'
+
+const icons = {
   react: FaReact,
   certificate: GrCertificate,
   mongodb: SiMongodb,

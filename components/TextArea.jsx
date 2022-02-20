@@ -1,9 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
 
-type Props = JSX.IntrinsicElements['textarea'] & {}
-
-function TextArea({ className, ...props }: Props) {
+function TextArea({ className, ...props }) {
   return (
     <textarea
       className={clsx(

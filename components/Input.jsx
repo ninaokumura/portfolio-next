@@ -1,9 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
 
-type Props = JSX.IntrinsicElements['input'] & {}
-
-function Input({ className, ...props }: Props) {
+function Input({ className, ...props }) {
   return (
     <input
       className={clsx(

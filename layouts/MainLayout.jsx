@@ -1,18 +1,13 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Navbar from '../components/Navbar'
-import Logo from '../components/Logo'
+import { useEffect, useState } from 'react'
+import clsx from 'clsx'
 import { FaHeart } from 'react-icons/fa'
 
-import { ReactNode, useEffect, useState } from 'react'
-import clsx from 'clsx'
+import Navbar from '../components/Navbar'
+import Logo from '../components/Logo'
 
-type Props = {
-  children: ReactNode
-  title: string
-}
-
-export default function MainLayout(props: Props) {
+export default function MainLayout(props) {
   const [sticky, setSticky] = useState(false)
 
   useEffect(() => {
