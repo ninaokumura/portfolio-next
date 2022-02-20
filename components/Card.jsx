@@ -16,7 +16,12 @@ Card.Title = function Title(props) {
 Card.Img = function Img(props) {
   return (
     <div className="h-48 w-80 overflow-hidden rounded">
-      <Image layout="responsive" src={props.src} alt={props.alt}></Image>
+      <Image
+        layout="responsive"
+        placeholder="blur"
+        src={props.src}
+        alt={props.alt}
+      ></Image>
     </div>
   )
 }

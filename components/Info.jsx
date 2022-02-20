@@ -9,7 +9,12 @@ export default function Info() {
     <div className="grid grid-cols-2">
       <div className="grid place-items-center">
         <div className="w-8/12 overflow-hidden rounded-xl transition-all ease-in-out hover:-rotate-12">
-          <Image layout="responsive" src={avatarImg} alt="avatar" />
+          <Image
+            layout="responsive"
+            placeholder="blur"
+            src={avatarImg}
+            alt="avatar"
+          />
         </div>
       </div>
 
