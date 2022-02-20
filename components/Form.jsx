@@ -57,7 +57,7 @@ export default function ContactForm() {
   // }, [name, email, message])
 
   return (
-    <div className="grid grid-cols-2 shadow-lg">
+    <div className="grid grid-cols-2 bg-[#fff]/40 shadow-lg">
       <div className="relative">
         <div className=" absolute -top-2 grid w-full place-items-center text-lg font-semibold">
           {submitError && (
@@ -72,7 +72,7 @@ export default function ContactForm() {
           )}
         </div>
         <form
-          className="mb-4 rounded bg-beige px-8 pt-6 pb-8 "
+          className="mb-4 rounded px-8 pt-6 pb-8 "
           name="contact"
           method="POST"
           data-netlify="true"
@@ -80,7 +80,10 @@ export default function ContactForm() {
         >
           <input type="hidden" name="form-name" value="contact" />
           <p>
-            <label htmlFor="yourname">Name</label> <br />
+            <label className="font-semibold" htmlFor="yourname">
+              Name
+            </label>{' '}
+            <br />
             <Input
               type="text"
               name="name"
@@ -90,7 +93,10 @@ export default function ContactForm() {
             />
           </p>
           <p>
-            <label htmlFor="youremail">Email</label> <br />
+            <label className="font-semibold" htmlFor="youremail">
+              Email
+            </label>{' '}
+            <br />
             <Input
               type="email"
               name="email"
@@ -100,7 +106,10 @@ export default function ContactForm() {
             />
           </p>
           <p>
-            <label htmlFor="yourmessage">Message</label> <br />
+            <label className="font-semibold" htmlFor="yourmessage">
+              Message
+            </label>{' '}
+            <br />
             <TextArea
               name="message"
               value={message}
