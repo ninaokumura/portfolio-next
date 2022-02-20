@@ -2,7 +2,7 @@ import React from 'react'
 import MainLayout from '../layouts/MainLayout'
 import Card from '../components/Card'
 import Button from '../components/Button'
-import projects from './project-data.js'
+import projects from '../data/projects.data'
 
 export default function Projects() {
   return (

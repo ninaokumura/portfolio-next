@@ -1,7 +1,7 @@
 import React from 'react'
 import Typewriter from 'typewriter-effect'
 
-const sentences = ['Hi, I am Nina', 'A self-taught coder', 'Learn more...']
+const sentences = ['Hey, ', 'A self-taught coder', 'Learn more...']
 const lastStepIndex = sentences.length - 1
 
 export default function TypewriterComponent() {
