@@ -6,9 +6,9 @@ import avatarImg from '../public/images/me.jpg'
 
 export default function Info() {
   return (
-    <div className="grid grid-cols-2">
+    <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
       <div className="grid place-items-center">
-        <div className="w-8/12 overflow-hidden rounded-xl transition-all ease-in-out hover:-rotate-12">
+        <div className="w-8/12 overflow-hidden rounded-xl transition-all ease-in-out hover:-rotate-12 ">
           <Image
             layout="responsive"
             placeholder="blur"
@@ -18,7 +18,7 @@ export default function Info() {
         </div>
       </div>
 
-      <div className="grid place-items-center">
+      <div className="grid place-items-center sm:pt-8">
         <h3 className="bg-brush px-12 text-4xl text-beige">Hello 👋</h3>
         <div className="max-w-[34rem] p-2 text-justify text-xl">
           <p className="p-2 text-justify text-lg leading-loose">
