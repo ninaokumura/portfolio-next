@@ -6,9 +6,9 @@ import avatarImg from '../public/images/me.jpg'
 
 export default function Info() {
   return (
-    <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-2">
+    <div className="grid md:-mt-[20vh] md:grid-cols-2">
       <div className="grid place-items-center">
-        <div className="w-8/12 overflow-hidden rounded-xl transition-all ease-in-out hover:-rotate-12 ">
+        <div className="w-8/12 overflow-hidden rounded-xl">
           <Image
             layout="responsive"
             placeholder="blur"
@@ -18,8 +18,10 @@ export default function Info() {
         </div>
       </div>
 
-      <div className="grid place-items-center sm:pt-8">
-        <h3 className="bg-brush px-12 text-4xl text-beige">Hello 👋</h3>
+      <div className="grid place-items-center">
+        <div className="p-3">
+          <h3 className="bg-brush px-12 text-4xl text-beige">Hello 👋</h3>
+        </div>
         <div className="max-w-[34rem] p-2 text-justify text-xl">
           <p className="p-2 text-justify text-lg leading-loose">
             I'm Nina, a self-taught developer based in Auckland, New Zealand.
@@ -36,7 +38,7 @@ export default function Info() {
           </p>
         </div>
 
-        <span className=" flex gap-6 text-3xl">
+        <span className=" flex gap-6 py-6 text-3xl md:py-2">
           <a target="blank" href="https://github.com/ninaokumura">
             <FaGithub />
           </a>
