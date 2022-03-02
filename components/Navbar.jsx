@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
+import { CgMenuGridO } from 'react-icons/cg'
 
 const links = [
   {
@@ -24,7 +25,7 @@ export default function Navbar() {
 
   return (
     <div className="flex flex-1 items-end justify-end">
-      <ul className="flex items-center gap-4">
+      <ul className="text-sm md:flex md:items-center md:gap-4">
         {links.map((link) => (
           <li
             key={link.label}

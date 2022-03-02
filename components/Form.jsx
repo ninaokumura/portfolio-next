@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useMemo } from 'react'
 
 import Input from './Input'
 import TextArea from './TextArea'
@@ -57,8 +57,8 @@ export default function ContactForm() {
   // }, [name, email, message])
 
   return (
-    <div className="grid grid-cols-2 bg-[#fff]/40 shadow-lg">
-      <div className="relative">
+    <div className="flex flex-col-reverse bg-[#fff]/40 shadow-lg md:flex-row">
+      <div className="relative flex-1">
         <div className=" absolute -top-2 grid w-full place-items-center text-lg font-semibold">
           {submitError && (
             <div className="rounded bg-gray-200 p-3 text-terracota">
@@ -72,7 +72,7 @@ export default function ContactForm() {
           )}
         </div>
         <form
-          className="mb-4 rounded px-8 pt-6 pb-8 "
+          className="mb-4 rounded px-8 pt-12 pb-8"
           name="contact"
           method="POST"
           data-netlify="true"
@@ -119,14 +119,16 @@ export default function ContactForm() {
             />
           </p>
           <p>
-            <Button className="w-full" type="submit">
-              Send
-            </Button>
+            <div className="grid place-items-center">
+              <Button className="w-full" type="submit">
+                Send
+              </Button>
+            </div>
           </p>
         </form>
       </div>
 
-      <div className="grid place-items-center">
+      <div className="grid flex-1 place-items-center py-4">
         <div className="flex flex-col gap-2 pb-8">
           <h2 className="m-auto bg-brush px-8 py-1 text-3xl text-beige">
             Get in touch
@@ -135,7 +137,11 @@ export default function ContactForm() {
             <h3 className="pb-2">email: elaineokumura@gmail.com</h3>
             <h3>phone: (+64) 027 548 7193</h3>
           </div>
-          <Button>Download resume</Button>
+          <div className="grid place-items-center">
+            <Button className="w-[80%] md:w-full" type="">
+              Download resume
+            </Button>
+          </div>
         </div>
       </div>
     </div>

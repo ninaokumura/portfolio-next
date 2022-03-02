@@ -7,17 +7,18 @@ import projects from '../data/projects.data'
 export default function Projects() {
   return (
     <MainLayout title="projects">
-      <section className="grid w-full gap-8">
+      <section className="grid w-full gap-8 p-8">
         <header className="text-center">
           <h1 className="inline-block bg-brush px-8 text-3xl text-beige ">
             My Projects
           </h1>
         </header>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((el) => (
             <Card key={el.title}>
               <Card.Img src={el.img} />
+
               <Card.Body>
                 <Card.Title>{el.title}</Card.Title>
                 {/* <Card.Text>{el.body}</Card.Text> */}

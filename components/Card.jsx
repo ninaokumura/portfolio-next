@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 function Card(props) {
   return (
-    <div className="grid w-full place-items-center gap-2 rounded bg-beige p-4 shadow-2xl">
+    <div className="grid place-items-center gap-2 rounded bg-beige p-4 shadow-2xl">
       {props.children}
     </div>
   )
@@ -15,7 +15,7 @@ Card.Title = function Title(props) {
 
 Card.Img = function Img(props) {
   return (
-    <div className="h-48 w-80 overflow-hidden rounded">
+    <div className="h-30 w-64 overflow-hidden rounded">
       <Image
         layout="responsive"
         placeholder="blur"

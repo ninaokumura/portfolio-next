@@ -36,7 +36,7 @@ const timeline = timelineItems.slice().reverse()
 
 export default function Timeline() {
   return (
-    <div className="grid w-full gap-4">
+    <div className="m-auto grid w-full py-12">
       <VerticalTimeline>
         {timeline.map((item) => {
           const TimelineIcon = icons[item.timelineIconId]
@@ -50,7 +50,9 @@ export default function Timeline() {
               }}
               icon={<TimelineIcon />}
             >
-              <h3 className="text-center text-xl font-bold">{item.title}</h3>
+              <h3 className="text-md text-center font-bold sm:text-xl">
+                {item.title}
+              </h3>
               <p className="pb-4 text-center">{item.subtitle}</p>
               <div className="flex justify-center gap-2 p-2">
                 {item.footerIcons.map((icon) => {
