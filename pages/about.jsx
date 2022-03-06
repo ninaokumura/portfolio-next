@@ -8,11 +8,8 @@ import MainLayout from '../layouts/MainLayout'
 export default function About() {
   return (
     <MainLayout title="about">
-      <div className="grid place-items-center">
+      <div className="grid place-items-center lg:h-screen">
         <Info />
-        <a href="#timeline">
-          <BsArrowDownCircle className="text-5xl text-terracota hover:animate-bounce" />
-        </a>
       </div>
 
       <div id="timeline" className="w-full">
