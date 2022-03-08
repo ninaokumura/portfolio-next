@@ -4,7 +4,7 @@ export default function Logo() {
   return (
     <div
       className={clsx(
-        'w-32 cursor-pointer text-left font-brand text-2xl font-black leading-7 hover:text-teal'
+        'w-32 cursor-pointer text-left font-brand text-xl font-black leading-7 hover:text-teal sm:text-2xl'
       )}
     >
       Nina Okumura

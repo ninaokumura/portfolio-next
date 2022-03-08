@@ -7,9 +7,9 @@ import projects from '../data/projects.data'
 export default function Projects() {
   return (
     <MainLayout title="projects">
-      <section className="grid w-full gap-8 p-8">
+      <section className="grid w-full gap-8 sm:p-8">
         <header className="text-center">
-          <h1 className="inline-block bg-brush px-8 text-3xl text-beige ">
+          <h1 className="inline-block bg-brush px-8 text-xl text-beige sm:text-3xl">
             My Projects
           </h1>
         </header>
@@ -21,7 +21,6 @@ export default function Projects() {
 
               <Card.Body>
                 <Card.Title>{el.title}</Card.Title>
-                {/* <Card.Text>{el.body}</Card.Text> */}
               </Card.Body>
               <div className="flex w-full gap-2">
                 <Button className="flex-1">

@@ -7,7 +7,7 @@ export const timelineItems = [
     footerIcons: [
       {
         id: 'certificate',
-        url: 'https://university.mongodb.com/courses/M220JS/2021_December_14/completion',
+        url: 'https://university.mongodb.com/course_completion/6f7be153-8ed2-4ecb-a68c-73adf7da86b4?utm_source=copy&utm_medium=social&utm_campaign=university_social_sharing',
       },
     ],
   },

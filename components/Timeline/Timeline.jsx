@@ -36,7 +36,7 @@ const timeline = timelineItems.slice().reverse()
 
 export default function Timeline() {
   return (
-    <div className="m-auto grid w-full py-12">
+    <div className="m-auto grid w-full py-8 ">
       <VerticalTimeline>
         {timeline.map((item) => {
           const TimelineIcon = icons[item.timelineIconId]
