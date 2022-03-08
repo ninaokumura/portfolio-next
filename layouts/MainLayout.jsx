@@ -12,7 +12,7 @@ export default function MainLayout(props) {
 
   useEffect(() => {
     document.addEventListener('scroll', () => {
-      setSticky(window.scrollY >= 100)
+      setSticky(window.scrollY >= 80)
     })
   }, [])
 
@@ -21,7 +21,7 @@ export default function MainLayout(props) {
       <Head>
         <title>{props.title}</title>
       </Head>
-      <div className="flex min-h-screen flex-col bg-beige">
+      <div className="flex min-h-screen w-full flex-col bg-beige">
         <header
           className={clsx('sticky top-0 z-10 text-terracota transition-all', {
             'bg-terracota text-beige shadow-sm shadow-terracota': sticky,
@@ -36,7 +36,7 @@ export default function MainLayout(props) {
             <Navbar />
           </div>
         </header>
-        <main className="m-auto grid w-full max-w-6xl flex-1 place-items-center p-8">
+        <main className="m-auto grid w-full max-w-6xl flex-1 place-items-center overflow-x-hidden p-4 sm:p-8">
           {props.children}
         </main>
         <footer className="m-auto grid h-20 w-full max-w-6xl place-items-center">

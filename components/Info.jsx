@@ -24,14 +24,14 @@ export default function Info() {
 
         <div className="w-[100%] p-2 text-justify text-sm sm:text-base">
           <p className="p-2 text-justify leading-loose md:leading-10">
-            I started my learning journey in early 2021 to become a full-stack
-            developer and it's been very exciting so far! 😃
+            My passion for programming began in early 2021 when I started
+            learning HTML, CSS, and Vanilla JavaScript. At the time I was
+            working as an ECE teacher and had just decided to switch career.
           </p>
           <p className="p-2 text-justify  leading-loose md:leading-10">
-            At first, I focused on HTML, CSS, and Vanilla JavaScript. And then,
-            started expanding my knowledge by studying the MERN stack. At the
-            moment I'm learning React and looking for my first job opportunity
-            within a company that can help me leverage my technical skills.
+            Since then, I've been focusing my learning on the MERN stack and at
+            the moment I'm looking for my first job opportunity within a company
+            that can help me leverage my technical skills.
           </p>
           <p className="p-2 text-justify leading-loose md:leading-10">
             One of the things I really enjoy in programming is the ability to
@@ -39,8 +39,9 @@ export default function Info() {
             path.
           </p>
           <p className="p-2 text-justify leading-loose md:leading-10">
-            When I'm not coding, I enjoy being outdoors and bird photography.
-            You can check my journey below.
+            Now, I am studying React and building my portfolio. When I'm not
+            coding, I enjoy being outdoors and bird photography. You can check
+            my journey below.
           </p>
         </div>
 

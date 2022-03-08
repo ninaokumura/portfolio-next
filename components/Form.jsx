@@ -72,7 +72,7 @@ export default function ContactForm() {
           )}
         </div>
         <form
-          className="mb-4 rounded px-8 pt-12 pb-8"
+          className="mb-4 rounded p-6 pt-12 pb-8 sm:p-8"
           name="contact"
           method="POST"
           data-netlify="true"
@@ -80,7 +80,10 @@ export default function ContactForm() {
         >
           <input type="hidden" name="form-name" value="contact" />
           <p>
-            <label className="font-semibold" htmlFor="yourname">
+            <label
+              className="text-sm font-semibold sm:text-base"
+              htmlFor="yourname"
+            >
               Name
             </label>{' '}
             <br />
@@ -93,7 +96,10 @@ export default function ContactForm() {
             />
           </p>
           <p>
-            <label className="font-semibold" htmlFor="youremail">
+            <label
+              className="text-sm font-semibold sm:text-base"
+              htmlFor="youremail"
+            >
               Email
             </label>{' '}
             <br />
@@ -106,7 +112,10 @@ export default function ContactForm() {
             />
           </p>
           <p>
-            <label className="font-semibold" htmlFor="yourmessage">
+            <label
+              className="text-sm font-semibold sm:text-base"
+              htmlFor="yourmessage"
+            >
               Message
             </label>{' '}
             <br />
@@ -129,18 +138,13 @@ export default function ContactForm() {
       </div>
 
       <div className="grid flex-1 place-items-center py-4">
-        <div className="flex flex-col gap-2 pb-8">
-          <h2 className="m-auto bg-brush px-8 py-1 text-3xl text-beige">
+        <div className="flex flex-col gap-2">
+          <h2 className="m-auto bg-brush px-8 text-xl text-beige sm:text-3xl">
             Get in touch
           </h2>
-          <div className="p-4 font-semibold">
-            <h3 className="pb-2">email: elaineokumura@gmail.com</h3>
+          <div className="grid gap-2 p-4 text-sm font-semibold">
+            <h3>email: elaineokumura@gmail.com</h3>
             <h3>phone: (+64) 027 548 7193</h3>
-          </div>
-          <div className="grid place-items-center">
-            <Button className="w-[80%] md:w-full" type="">
-              Download resume
-            </Button>
           </div>
         </div>
       </div>
