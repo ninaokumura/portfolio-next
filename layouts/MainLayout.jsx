@@ -23,9 +23,12 @@ export default function MainLayout(props) {
       </Head>
       <div className="flex min-h-screen w-full flex-col bg-beige">
         <header
-          className={clsx('sticky top-0 z-10 text-terracota transition-all', {
-            'bg-terracota text-beige shadow-sm shadow-terracota': sticky,
-          })}
+          className={clsx(
+            'visible sticky top-0 z-10 text-terracota transition-all',
+            {
+              'bg-terracota text-beige shadow-sm shadow-terracota': sticky,
+            }
+          )}
         >
           <div className="m-auto flex w-full max-w-6xl p-8">
             <Link href="/">
