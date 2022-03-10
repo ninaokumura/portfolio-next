@@ -8,7 +8,7 @@ import MainLayout from '../layouts/MainLayout'
 export default function About() {
   return (
     <MainLayout title="about">
-      <div className="grid place-items-center lg:h-screen">
+      <div className="grid place-items-center">
         <Info />
       </div>
 
