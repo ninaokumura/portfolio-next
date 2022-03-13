@@ -8,10 +8,8 @@ export default function Projects() {
   return (
     <MainLayout title="projects">
       <section className="grid w-full gap-8 sm:p-8">
-        <header className="text-center">
-          <h1 className="inline-block bg-brush px-8 text-xl text-beige sm:text-3xl">
-            My Projects
-          </h1>
+        <header className="">
+          <h1 className="text-dark inline-block text-xl font-semibold sm:text-3xl"></h1>
         </header>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

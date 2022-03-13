@@ -19,7 +19,7 @@ const links = [
   },
 ]
 
-export default function Navbar() {
+export default function Navbar({ isSticky }) {
   const router = useRouter()
   const currentPath = router.asPath
 
@@ -35,7 +35,8 @@ export default function Navbar() {
         className={clsx(
           'absolute bottom-0 flex items-center justify-center gap-4 text-sm sm:-bottom-0',
           {
-            'hidden sm:flex': !isMenuOpen,
+            'hidden sm:flex ': !isMenuOpen,
+            'text-beige': isSticky,
           }
         )}
       >
@@ -59,7 +60,9 @@ export default function Navbar() {
       </ul>
 
       <button
-        className="absolute top-0 text-3xl sm:hidden"
+        className={clsx('absolute top-0 text-3xl sm:hidden', {
+          'text-beige': isSticky,
+        })}
         onClick={toggleMenu}
       >
         {isMenuOpen ? <HiX /> : <HiMenu />}
