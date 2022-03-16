@@ -3,19 +3,19 @@ import Image from 'next/image'
 
 function Card(props) {
   return (
-    <div className="grid place-items-center gap-2 rounded bg-beige p-4 shadow-2xl">
+    <div className="grid place-items-center gap-2 rounded-xl bg-beige p-2 shadow-2xl">
       {props.children}
     </div>
   )
 }
 
 Card.Title = function Title(props) {
-  return <div className="pb-4 text-lg">{props.children}</div>
+  return <div className="pb-4 text-lg font-medium">{props.children}</div>
 }
 
 Card.Img = function Img(props) {
   return (
-    <div className="h-30 w-64 overflow-hidden rounded">
+    <div className="w-full overflow-hidden rounded-lg">
       <Image
         layout="responsive"
         placeholder="blur"

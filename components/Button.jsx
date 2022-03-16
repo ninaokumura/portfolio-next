@@ -5,7 +5,7 @@ function Button({ className, ...props }) {
   return (
     <button
       className={clsx(
-        'rounded bg-black px-4 py-2 text-beige transition-colors hover:bg-black/70',
+        '... transform rounded-lg bg-teal py-2 text-beige transition-all hover:opacity-90',
         className
       )}
       {...props}

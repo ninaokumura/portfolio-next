@@ -57,6 +57,7 @@ export default function Timeline() {
               <div className="flex justify-center gap-2 p-2">
                 {item.footerIcons.map((icon) => {
                   const Icon = icons[icon.id]
+                  console.log(Icon)
                   return (
                     <span key={icon.id} className="text-2xl">
                       <a href={icon.url}>
