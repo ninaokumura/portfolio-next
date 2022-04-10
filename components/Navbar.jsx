@@ -30,25 +30,26 @@ export default function Navbar({ isSticky }) {
   }
 
   return (
-    <div className="relative flex flex-1 items-end justify-end">
+    <div className="flex flex-1 items-end justify-end">
       <ul
         className={clsx(
-          'absolute bottom-0 flex items-center justify-center gap-4 text-sm sm:-bottom-0',
+          'absolute inset-0 flex h-screen w-full flex-1 flex-col items-center justify-center gap-4 bg-white/80 backdrop-blur-sm transition-all sm:relative sm:h-min sm:flex-row sm:justify-end sm:bg-transparent',
           {
-            'hidden sm:flex ': !isMenuOpen,
-            'text-beige': isSticky,
+            'hidden sm:flex': !isMenuOpen,
+            'border opacity-100': isMenuOpen,
+            'sm:text-beige': isSticky,
           }
         )}
       >
         {links.map((link) => (
           <li
             key={link.label}
-            className="flex-1 whitespace-nowrap text-center sm:min-w-[125px]"
+            className="whitespace-nowrap sm:flex sm:min-w-[125px] sm:justify-end"
           >
             <Link href={link.href}>
               <a
                 className={clsx(
-                  'cursor-pointer text-sm opacity-90 transition-transform hover:scale-[102%] hover:font-bold sm:text-xl',
+                  'cursor-pointer text-xl opacity-90 transition-transform hover:scale-[102%] hover:font-bold',
                   { 'font-bold': link.href === currentPath }
                 )}
               >
@@ -60,8 +61,9 @@ export default function Navbar({ isSticky }) {
       </ul>
 
       <button
-        className={clsx('absolute top-0 text-3xl sm:hidden', {
+        className={clsx('absolute top-8 text-3xl sm:hidden', {
           'text-beige': isSticky,
+          'text-terracota': isMenuOpen,
         })}
         onClick={toggleMenu}
       >
