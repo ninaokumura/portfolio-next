@@ -1,27 +1,31 @@
-# Next.js + Tailwind CSS Example
+# ninaokumura.me
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+My personal portfolio.
 
-## Preview
+## Description
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+- Built with Next.js
+- Styled with Tailwindcss
+- Uses Netlify form to handle submission
+- Deployed on Netlify
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+## Getting Started
 
-## Deploy your own
+Cloning and installing dependencies
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+- git@github.com:ninaokumura/portfolio-next.git
+- cd portfolio-next
+- npm install
+- code .
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+Running the app
 
-## How to use
+- npm run dev
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in your browser.
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+## Acknowledgments
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+- [Color palette inspiration](https://www.happyhues.co/palettes/8)
+- [Netlify form](https://www.netlify.com/blog/2020/05/26/add-a-netlify-powered-contact-form-to-your-next-js-site/)
