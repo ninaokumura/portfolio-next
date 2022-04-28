@@ -42,12 +42,11 @@ export default function Timeline() {
           const TimelineIcon = icons[item.timelineIconId]
           return (
             <VerticalTimelineElement
+              textClassName="dark:bg-slate-600 dark:shadow-slate-800 dark:!shadow-lg"
+              contentArrowStyle={{ display: 'none' }}
               key={item.title}
               date={item.duration}
-              iconStyle={{
-                background: '#399999',
-                color: 'whiteSmoke',
-              }}
+              iconClassName="bg-teal dark:bg-terracota text-beige"
               icon={<TimelineIcon />}
             >
               <h3 className="text-md text-center font-bold sm:text-xl">
@@ -61,7 +60,7 @@ export default function Timeline() {
                   return (
                     <span key={icon.id} className="text-2xl">
                       <a href={icon.url}>
-                        <Icon />
+                        <Icon className="dark:text-black dark:invert" />
                       </a>
                     </span>
                   )
@@ -71,11 +70,7 @@ export default function Timeline() {
           )
         })}
         <VerticalTimelineElement
-          iconStyle={{
-            background: '#fff',
-            color: '#078080',
-            opacity: 1,
-          }}
+          iconClassName="bg-[#fff] text-teal dark:text-terracota opacity-1"
           icon={<FaStar />}
         />
       </VerticalTimeline>
