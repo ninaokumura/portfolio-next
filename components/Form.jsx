@@ -32,7 +32,6 @@ export default function ContactForm() {
   const handleSubmit = (event) => {
     event.preventDefault()
     const formData = { name, email, message }
-    console.log(formData)
 
     fetch('/', {
       method: 'POST',
@@ -40,6 +39,7 @@ export default function ContactForm() {
       body: encode({ 'form-name': 'contact', ...formData }),
     })
       .then(() => setSubmitted(true))
+
       .catch((error) => setSubmitError(error.message))
   }
 
@@ -57,7 +57,7 @@ export default function ContactForm() {
   // }, [name, email, message])
 
   return (
-    <div className="flex flex-col-reverse bg-[#fff]/40 shadow-lg md:flex-row">
+    <div className="flex flex-col-reverse rounded-xl bg-[#fff]/40 shadow-lg dark:bg-slate-600 md:flex-row">
       <div className="relative flex-1">
         <div className=" absolute -top-2 grid w-full place-items-center text-lg font-semibold">
           {submitError && (
@@ -124,22 +124,20 @@ export default function ContactForm() {
               value={message}
               id="yourmessage"
               onChange={handleMessageChange}
-              className="h-56"
+              className="h-56 dark:bg-slate-200"
             />
           </p>
-          <p>
-            <div className="grid place-items-center">
-              <Button className="w-full" type="submit">
-                Send
-              </Button>
-            </div>
-          </p>
+          <div className="grid place-items-center">
+            <Button className="w-full" type="submit">
+              <span className="font-bold sm:text-lg">Submit</span>
+            </Button>
+          </div>
         </form>
       </div>
 
       <div className="grid flex-1 place-items-center py-4">
         <div className="flex flex-col gap-2">
-          <h2 className="m-auto bg-brush px-8 text-xl text-beige sm:text-3xl">
+          <h2 className="m-auto bg-brush px-8 text-xl font-semibold text-beige dark:bg-brush2 sm:text-3xl">
             Get in touch
           </h2>
           <div className="grid gap-2 p-4 text-sm font-semibold">

@@ -2,6 +2,7 @@
  * @type {import("tailwindcss/tailwind-config").TailwindConfig}
  */
 module.exports = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
@@ -17,6 +18,8 @@ module.exports = {
       },
       backgroundImage: {
         brush: "url('//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=078080')",
+        brush2:
+          "url('//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=f45d48')",
       },
     },
   },

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import clsx from 'clsx'
 import { HiMenu, HiX } from 'react-icons/hi'
+import DarkModeToggle from './DarkModeToggle'
 
 const links = [
   {
@@ -33,10 +34,10 @@ export default function Navbar({ isSticky }) {
     <div className="flex flex-1 items-end justify-end">
       <ul
         className={clsx(
-          'absolute inset-0 flex h-screen w-full flex-1 flex-col items-center justify-center gap-4 bg-white/80 backdrop-blur-sm transition-all sm:relative sm:h-min sm:flex-row sm:justify-end sm:bg-transparent',
+          'absolute inset-0 flex h-screen w-full flex-1 flex-col items-center justify-center gap-4 bg-white/80 backdrop-blur-sm transition-all  sm:relative sm:h-min sm:flex-row sm:justify-end sm:bg-transparent',
           {
             'hidden sm:flex': !isMenuOpen,
-            'border opacity-100': isMenuOpen,
+            'border opacity-100 dark:bg-slate-600/90': isMenuOpen,
             'sm:text-beige': isSticky,
           }
         )}
@@ -58,12 +59,15 @@ export default function Navbar({ isSticky }) {
             </Link>
           </li>
         ))}
+        <div className="text-xl">
+          <DarkModeToggle />
+        </div>
       </ul>
 
       <button
         className={clsx('absolute top-8 text-3xl sm:hidden', {
           'text-beige': isSticky,
-          'text-terracota': isMenuOpen,
+          'text-terracota dark:text-orange-300': isMenuOpen,
         })}
         onClick={toggleMenu}
       >

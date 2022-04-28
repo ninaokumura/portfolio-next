@@ -55,7 +55,7 @@ export default function Info() {
             target="blank"
             href="https://codesandbox.io/dashboard/all/?workspace=28f95194-dcbc-4c8f-822a-3d489b1f4a1b"
           >
-            <GrCodeSandbox />
+            <GrCodeSandbox className="dark:invert" />
           </a>
           <a target="blank" href="https://www.linkedin.com/in/nina-7b4377221/">
             <FaLinkedin />

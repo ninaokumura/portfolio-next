@@ -17,16 +17,17 @@ export default function MainLayout(props) {
   }, [])
 
   return (
-    <>
+    <div>
       <Head>
         <title>{props.title}</title>
       </Head>
-      <div className="flex min-h-screen w-full flex-col bg-beige">
+      <div className="flex min-h-screen w-full flex-col bg-beige dark:bg-slate-700 dark:text-white">
         <header
           className={clsx(
-            'visible sticky top-0 z-10 text-terracota transition-all',
+            'visible sticky top-0 z-10 text-terracota transition-all dark:text-orange-300',
             {
-              'bg-terracota text-beige shadow-sm shadow-terracota': sticky,
+              'bg-terracota text-beige shadow-sm shadow-terracota dark:bg-teal dark:shadow-teal':
+                sticky,
             }
           )}
         >
@@ -39,7 +40,7 @@ export default function MainLayout(props) {
             <Navbar isSticky={sticky} />
           </div>
         </header>
-        <main className="m-auto grid w-full max-w-6xl flex-1 place-items-center overflow-x-hidden p-4 sm:p-8">
+        <main className="m-auto grid w-full max-w-6xl flex-1 place-items-center overflow-x-hidden p-4  sm:p-8">
           {props.children}
         </main>
         <footer className="m-auto grid h-20 w-full max-w-6xl place-items-center">
@@ -48,6 +49,6 @@ export default function MainLayout(props) {
           </div>
         </footer>
       </div>
-    </>
+    </div>
   )
 }

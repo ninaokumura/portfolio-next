@@ -34,10 +34,6 @@ export default function Projects() {
   return (
     <MainLayout title="projects">
       <section className="grid w-full gap-8 sm:p-8">
-        <header className="">
-          <h1 className="text-dark inline-block text-xl font-semibold sm:text-3xl"></h1>
-        </header>
-
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((item) => (
             <Card key={item.title}>
