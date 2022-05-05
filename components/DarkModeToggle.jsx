@@ -28,7 +28,7 @@ export default function DarkModeToggle() {
   }
   return (
     <div className="text-2xl">
-      <button onClick={toggleDarkMode}>{darkMode ? '🌞' : '🌜'}</button>
+      <button onClick={toggleDarkMode}>{darkMode ? '🌜' : '🌞'}</button>
     </div>
   )
 }
