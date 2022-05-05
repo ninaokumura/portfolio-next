@@ -1,19 +1,5 @@
 const projects = [
   {
-    img: require('../public/images/portfolio.jpg'),
-    title: 'Personal Portfolio',
-    // body: 'Portfolio - FreeCodeCamp',
-    codeUrl: 'https://codesandbox.io/s/personal-portfolio-764y8',
-    demoUrl: 'https://764y8.csb.app/',
-    techIconsId: [
-      {
-        id: 'html',
-      },
-      { id: 'css' },
-    ],
-  },
-
-  {
     img: require('../public/images/guess-number.jpg'),
     title: 'Guess the Number game',
     // body: 'Guess the number between 1 and 20',
@@ -81,6 +67,21 @@ const projects = [
       },
 
       { id: 'tailwind' },
+    ],
+  },
+  {
+    img: require('../public/images/scribbles-app.jpg'),
+    title: 'Scribbles - Markdown app',
+    // body: 'Calculator buil with React',
+    codeUrl: 'https://github.com/ninaokumura/scribbles-app',
+    demoUrl: 'https://scribbles-app-omega.vercel.app/',
+    techIconsId: [
+      {
+        id: 'react',
+      },
+
+      { id: 'tailwind' },
+      { id: 'mongodb' },
     ],
   },
 ]
