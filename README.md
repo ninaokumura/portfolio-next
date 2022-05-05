@@ -29,3 +29,5 @@ Open http://localhost:3000 to view it in your browser.
 
 - [Color palette inspiration](https://www.happyhues.co/palettes/8)
 - [Netlify form](https://www.netlify.com/blog/2020/05/26/add-a-netlify-powered-contact-form-to-your-next-js-site/)
+- [Timeline component](https://stephane-monnot.github.io/react-vertical-timeline/#/)
+- [Dark Mode](https://codesandbox.io/s/react-typescript-tailwind-nhfyz8)
