@@ -57,7 +57,10 @@ export default function Info() {
           >
             <GrCodeSandbox className="dark:invert" />
           </a>
-          <a target="blank" href="https://www.linkedin.com/in/nina-7b4377221/">
+          <a
+            target="blank"
+            href="https://www.linkedin.com/in/nina-okumura-7b4377221/"
+          >
             <FaLinkedin />
           </a>
           <a target="blank" href="https://www.instagram.com/ninabirdgram/">
