@@ -28,18 +28,14 @@ export default function Info() {
             learning the fundamentals of HTML, CSS, and Vanilla JavaScript.
           </p>
           <p className="p-2 text-justify  leading-loose md:leading-8">
-            Once I was sure that I wanted to pursue a career as a Web Developer,
-            I decided to expand my knowledge by studying the MERN stack.
+            During my journey to become a full-stack dev I found a passion for
+            front-end development and that's the path I want to pursue in my
+            future career.
           </p>
           <p className="p-2 text-justify leading-loose md:leading-8">
             At the moment I'm learning React and looking for my first job
             opportunity within a company that can guide me in order to leverage
-            my technical skills.
-          </p>
-          <p className="p-2 text-justify leading-loose md:leading-8">
-            One of the things I really enjoy in programming is the ability to
-            bring an idea to life and I am really excited to begin this career
-            path.
+            not only my technical skills but also my interpersonal skills.
           </p>
           <p className="p-2 text-justify leading-loose md:leading-8">
             When I'm not coding I enjoy being outdoors and bird photography. You
