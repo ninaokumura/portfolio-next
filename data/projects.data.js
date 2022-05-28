@@ -70,18 +70,17 @@ const projects = [
     ],
   },
   {
-    img: require('../public/images/scribbles-app.jpg'),
-    title: 'Scribbles - Markdown app',
-    // body: 'Calculator buil with React',
-    codeUrl: 'https://github.com/ninaokumura/scribbles-app',
-    demoUrl: 'https://scribbles-app-omega.vercel.app/',
+    img: require('../public/images/advice-generator.jpg'),
+    title: 'Advice Generator',
+
+    codeUrl: 'https://github.com/ninaokumura/advice-generator',
+    demoUrl: 'https://advice-generator-machine.netlify.app/',
     techIconsId: [
       {
         id: 'react',
       },
 
       { id: 'tailwind' },
-      { id: 'mongodb' },
     ],
   },
 ]
