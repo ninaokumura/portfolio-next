@@ -1,5 +1,17 @@
 export const timelineItems = [
   {
+    timelineIconId: 'react',
+    duration: 'Jun 22 - Aug 22',
+    title: 'React (Hooks, React Router, Redux)',
+    subtitle: 'Udemy',
+    footerIcons: [
+      {
+        id: 'certificate',
+        url: 'https://www.udemy.com/certificate/UC-728b6207-4f1d-48df-ac5c-6506b1154258/',
+      },
+    ],
+  },
+  {
     timelineIconId: 'mongodb',
     duration: 'Feb 22 - Feb 22',
     title: 'MongoDB for JavaScript Developers',
