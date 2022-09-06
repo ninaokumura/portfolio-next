@@ -29,32 +29,40 @@ export default function ContactForm() {
     setMessage(event.target.value)
   }
 
-  const handleSubmit = (event) => {
+  const handleResetForm = () => {
+    setName(''), setEmail('')
+    setMessage('')
+  }
+
+  const handleSubmit = async (event) => {
     event.preventDefault()
     const formData = { name, email, message }
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...formData }),
-    })
-      .then(() => setSubmitted(true))
-
-      .catch((error) => setSubmitError(error.message))
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contact', ...formData }),
+      })
+      setSubmitted(true)
+      handleResetForm()
+    } catch (error) {
+      setSubmitError(error.message)
+    }
   }
 
-  // const isFormValid = useMemo(() => {
-  //   if (name === '') {
-  //     return false
-  //   }
-  //   if (email === '') {
-  //     return false
-  //   }
-  //   if (message === '') {
-  //     return false
-  //   }
-  //   return true
-  // }, [name, email, message])
+  const isFormValid = useMemo(() => {
+    if (name === '') {
+      return false
+    }
+    if (email === '') {
+      return false
+    }
+    if (message === '') {
+      return false
+    }
+    return true
+  }, [name, email, message])
 
   return (
     <div className="flex flex-col-reverse rounded-xl bg-[#fff]/40 shadow-lg dark:bg-slate-600 md:flex-row">
@@ -128,7 +136,7 @@ export default function ContactForm() {
             />
           </p>
           <div className="grid place-items-center">
-            <Button className="w-full" type="submit">
+            <Button className="w-full" type="submit" disabled={!isFormValid}>
               <span className="font-bold sm:text-lg">Submit</span>
             </Button>
           </div>
