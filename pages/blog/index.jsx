@@ -6,7 +6,9 @@ import Articles from '../../components/Articles'
 export default function Blogposts(props) {
   return (
     <MainLayout>
-      <Articles blogposts={props.blogposts} />
+      <div className="h-full w-full">
+        <Articles blogposts={props.blogposts} />
+      </div>
     </MainLayout>
   )
 }

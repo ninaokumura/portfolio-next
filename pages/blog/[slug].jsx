@@ -16,8 +16,12 @@ export default function BlogpostPage({ post }) {
       <Head>
         <title>{post.meta.title}</title>
       </Head>
-      <h1>{post.meta.title}</h1>
-      <MDXRemote {...post.source} components={{ YouTube, Image }} />
+      <div className="flex h-full w-full max-w-xs flex-col gap-4 px-2 sm:min-w-full">
+        <h1 className="text-2xl font-bold text-teal dark:text-orange-300">
+          {post.meta.title}
+        </h1>
+        <MDXRemote {...post.source} components={{ YouTube, Image }} />
+      </div>
     </MainLayout>
   )
 }
