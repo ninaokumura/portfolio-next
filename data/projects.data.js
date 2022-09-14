@@ -97,6 +97,20 @@ const projects = [
       { id: 'tailwind' },
     ],
   },
+  {
+    img: require('../public/images/card-component.jpg'),
+    title: 'Interactive card component',
+
+    codeUrl: 'https://github.com/ninaokumura/interactive-card-details',
+    demoUrl: 'https://ninaokumura.github.io/interactive-card-details/',
+    techIconsId: [
+      {
+        id: 'react',
+      },
+
+      { id: 'tailwind' },
+    ],
+  },
 ]
 
 export default projects
