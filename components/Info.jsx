@@ -24,22 +24,20 @@ export default function Info() {
 
         <div className="w-[100%] p-2 text-justify text-sm sm:text-base">
           <p className="p-2 text-justify leading-loose md:leading-8">
-            My passion for programming began in early 2021 when I started
-            learning the fundamentals of HTML, CSS, and Vanilla JavaScript.
+            I'm a self-taught web developer based in Auckland, New Zealand. My
+            passion for programming began in early 2021, and since then I've
+            been actively learning new technologies and tools, such as HTML,
+            CSS, JavaScript, Node, React, Tailwindcss, and most recently
+            Typescript and A11y.
           </p>
           <p className="p-2 text-justify  leading-loose md:leading-8">
-            During my journey to become a full-stack dev I found a passion for
-            front-end development and that's the path I want to pursue in my
-            future career.
+            Although in the beginning, I was focused on full-stack-development,
+            for the last few months, I've been working on improving my Frontend
+            skills.
           </p>
           <p className="p-2 text-justify leading-loose md:leading-8">
-            At the moment I'm learning React and looking for my first job
-            opportunity within a company that can guide me in order to leverage
-            not only my technical skills but also my interpersonal skills.
-          </p>
-          <p className="p-2 text-justify leading-loose md:leading-8">
-            When I'm not coding I enjoy being outdoors and bird photography. You
-            can check my learning journey below. 😀
+            I am a quick learner and team player keen to leverage my technical
+            and people skills to contribute to meaningful projects.
           </p>
         </div>
 
