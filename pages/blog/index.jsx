@@ -7,7 +7,11 @@ export default function Blogposts(props) {
   return (
     <MainLayout>
       <div className="h-full w-full">
-        <Articles blogposts={props.blogposts} />
+        {props.blogposts.length === 0 ? (
+          <p>Nothing to read yet! Please come back later 🙂</p>
+        ) : (
+          <Articles blogposts={props.blogposts} />
+        )}
       </div>
     </MainLayout>
   )
