@@ -14,13 +14,14 @@ import {
   FaStar,
   FaGithub,
 } from 'react-icons/fa'
-import { SiJavascript, SiMongodb } from 'react-icons/si'
+import { SiJavascript, SiMongodb, SiTypescript } from 'react-icons/si'
 import { GrCertificate, GrCodeSandbox } from 'react-icons/gr'
 
 import { timelineItems } from './Timeline.data'
 
 const icons = {
   react: FaReact,
+  typescript: SiTypescript,
   certificate: GrCertificate,
   mongodb: SiMongodb,
   node: FaNodeJs,
