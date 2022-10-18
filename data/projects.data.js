@@ -111,6 +111,21 @@ const projects = [
       { id: 'tailwind' },
     ],
   },
+  {
+    img: require('../public/images/todo.jpg'),
+    title: 'Todo app',
+
+    codeUrl: 'https://github.com/ninaokumura/todo-app',
+    demoUrl: 'https://ninaokumura.github.io/todo-app/',
+    techIconsId: [
+      { id: 'typescript' },
+      {
+        id: 'react',
+      },
+
+      { id: 'tailwind' },
+    ],
+  },
 ]
 
 export default projects

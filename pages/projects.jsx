@@ -5,7 +5,7 @@ import Button from '../components/Button'
 import projects from '../data/projects.data'
 
 import { FaReact, FaNodeJs } from 'react-icons/fa'
-import { SiMongodb, SiTailwindcss } from 'react-icons/si'
+import { SiMongodb, SiTailwindcss, SiTypescript } from 'react-icons/si'
 import { DiJavascript, DiCss3, DiHtml5 } from 'react-icons/di'
 
 import { darken } from 'polished'
@@ -18,6 +18,7 @@ const icons = {
   tailwind: SiTailwindcss,
   html: DiHtml5,
   javascript: DiJavascript,
+  typescript: SiTypescript,
 }
 
 const iconsColors = {
