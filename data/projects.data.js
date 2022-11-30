@@ -126,6 +126,21 @@ const projects = [
       { id: 'tailwind' },
     ],
   },
+  {
+    img: require('../public/images/space-tour.jpg'),
+    title: 'Space tour',
+
+    codeUrl: 'https://github.com/ninaokumura/space-tour',
+    demoUrl: 'https://space-tour-amber.vercel.app/',
+    techIconsId: [
+      { id: 'nextJs' },
+      {
+        id: 'react',
+      },
+
+      { id: 'tailwind' },
+    ],
+  },
 ]
 
 export default projects

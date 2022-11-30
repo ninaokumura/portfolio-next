@@ -7,6 +7,7 @@ import projects from '../data/projects.data'
 import { FaReact, FaNodeJs } from 'react-icons/fa'
 import { SiMongodb, SiTailwindcss, SiTypescript } from 'react-icons/si'
 import { DiJavascript, DiCss3, DiHtml5 } from 'react-icons/di'
+import { TbBrandNextjs } from 'react-icons/tb'
 
 import { darken } from 'polished'
 
@@ -19,6 +20,7 @@ const icons = {
   html: DiHtml5,
   javascript: DiJavascript,
   typescript: SiTypescript,
+  nextJs: TbBrandNextjs,
 }
 
 const iconsColors = {
