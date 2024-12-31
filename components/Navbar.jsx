@@ -7,19 +7,11 @@ import DarkModeToggle from './DarkModeToggle'
 
 const links = [
   {
-    label: 'About',
-    href: '/about',
-  },
-  {
-    label: 'Projects',
-    href: '/projects',
-  },
-  {
     label: 'Blog',
     href: '/blog',
   },
   {
-    label: 'Hire me',
+    label: 'Say Hello',
     href: '/contact',
   },
 ]

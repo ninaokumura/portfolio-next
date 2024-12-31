@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import { FaHeart } from 'react-icons/fa'
+import avatarImg from '../public/images/me-square.jpg'
 
 import Navbar from '../components/Navbar'
 import Logo from '../components/Logo'
@@ -31,12 +33,23 @@ export default function MainLayout(props) {
             }
           )}
         >
-          <div className="m-auto flex w-full max-w-6xl p-8">
-            <Link href="/">
-              <a>
-                <Logo className={clsx({ 'text-beige': sticky })} />
-              </a>
-            </Link>
+          <div className="m-auto flex w-full max-w-6xl justify-between p-8 align-middle">
+            <div className="flex items-center gap-4">
+              <Link href="/">
+                <a className="flex items-end gap-4">
+                  <Image
+                    className="rounded-full"
+                    layout="fixed"
+                    placeholder="blur"
+                    src={avatarImg}
+                    alt="avatar"
+                    height={80}
+                    width={80}
+                  />
+                  <Logo className={clsx({ 'text-beige': sticky })} />
+                </a>
+              </Link>
+            </div>
             <Navbar isSticky={sticky} />
           </div>
         </header>

@@ -6,15 +6,22 @@ import Timeline from '../components/Timeline/Timeline'
 import MainLayout from '../layouts/MainLayout'
 
 export default function About() {
+  const [shouldOpenCourses, setShouldOpenCourses] = React.useState(false)
+
+  const handleOpenJob = () => {
+    console.log('job')
+  }
   return (
-    <MainLayout title="about">
-      <div className="grid place-items-center">
-        <Info />
+    <MainLayout title="About me">
+      <div className="grid place-items-center border-2 border-black">
+        <Info setShouldOpenCourses={setShouldOpenCourses} />
       </div>
 
-      <div id="timeline" className="w-full">
-        <Timeline />
-      </div>
+      {shouldOpenCourses && (
+        <div id="timeline" className="w-full ">
+          <Timeline />
+        </div>
+      )}
     </MainLayout>
   )
 }

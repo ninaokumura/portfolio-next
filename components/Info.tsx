@@ -1,22 +1,14 @@
 import React from 'react'
 import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa'
-import { GrCodeSandbox } from 'react-icons/gr'
-import Image from 'next/image'
-import avatarImg from '../public/images/me-square.jpg'
+import { MdSchool, MdWork } from 'react-icons/md'
 
-export default function Info() {
+interface InfoProps {
+  setShouldOpenCourses: (value: boolean | ((prev: boolean) => boolean)) => void
+}
+
+export default function Info({ setShouldOpenCourses }: InfoProps) {
   return (
-    <div className="p-2 lg:grid lg:grid-cols-2">
-      <div className="m-auto w-[50%] lg:w-[75%]">
-        <Image
-          className="rounded-full"
-          layout="responsive"
-          placeholder="blur"
-          src={avatarImg}
-          alt="avatar"
-        />
-      </div>
-
+    <div className="p-2">
       <div className="grid place-items-center py-4">
         <h3 className="text-dark text-center text-sm font-semibold sm:text-xl">
           Thank you for stopping by 👋
@@ -45,21 +37,15 @@ export default function Info() {
           <a target="blank" href="https://github.com/ninaokumura">
             <FaGithub />
           </a>
-          <a
-            target="blank"
-            href="https://codesandbox.io/dashboard/all/?workspace=28f95194-dcbc-4c8f-822a-3d489b1f4a1b"
-          >
-            <GrCodeSandbox className="dark:invert" />
-          </a>
-          <a
-            target="blank"
-            href="https://www.linkedin.com/in/nina-okumura-7b4377221/"
-          >
+          <a target="blank" href="">
             <FaLinkedin />
           </a>
-          <a target="blank" href="https://www.instagram.com/ninabirdgram/">
-            <FaInstagram />
-          </a>
+          <button onClick={() => setShouldOpenCourses((prev) => !prev)}>
+            <MdSchool />
+          </button>
+          <button>
+            <MdWork />
+          </button>
         </span>
       </div>
     </div>
