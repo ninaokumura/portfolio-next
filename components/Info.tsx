@@ -4,9 +4,15 @@ import { MdSchool, MdWork } from 'react-icons/md'
 
 interface InfoProps {
   setShouldOpenCourses: (value: boolean | ((prev: boolean) => boolean)) => void
+  setShouldOpenExperiences: (
+    value: boolean | ((prev: boolean) => boolean)
+  ) => void
 }
 
-export default function Info({ setShouldOpenCourses }: InfoProps) {
+export default function Info({
+  setShouldOpenCourses,
+  setShouldOpenExperiences,
+}: InfoProps) {
   return (
     <div className="p-2">
       <div className="grid place-items-center py-4">
@@ -43,7 +49,7 @@ export default function Info({ setShouldOpenCourses }: InfoProps) {
           <button onClick={() => setShouldOpenCourses((prev) => !prev)}>
             <MdSchool />
           </button>
-          <button>
+          <button onClick={() => setShouldOpenExperiences((prev) => !prev)}>
             <MdWork />
           </button>
         </span>

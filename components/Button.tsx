@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { ButtonHTMLAttributes } from 'react'
 import clsx from 'clsx'
 
-function Button({ className, ...props }) {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string
+}
+
+const Button: React.FC<ButtonProps> = ({ className, children, ...props }) => {
   return (
     <button
       className={clsx(
@@ -10,7 +14,7 @@ function Button({ className, ...props }) {
       )}
       {...props}
     >
-      {props.children}
+      {children}
     </button>
   )
 }

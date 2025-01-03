@@ -5,6 +5,10 @@ import clsx from 'clsx'
 import { HiMenu, HiX } from 'react-icons/hi'
 import DarkModeToggle from './DarkModeToggle'
 
+interface NavbarProps {
+  isSticky?: boolean
+}
+
 const links = [
   {
     label: 'Blog',
@@ -16,21 +20,21 @@ const links = [
   },
 ]
 
-export default function Navbar({ isSticky }) {
+const Navbar: React.FC<NavbarProps> = ({ isSticky }) => {
   const router = useRouter()
   const currentPath = router.asPath
 
   const [isMenuOpen, setMenuOpen] = useState(false)
 
-  function toggleMenu() {
-    setMenuOpen(!isMenuOpen)
+  const toggleMenu = () => {
+    setMenuOpen((prev) => !prev)
   }
 
   return (
     <div className="flex flex-1 items-end justify-end">
       <ul
         className={clsx(
-          'absolute inset-0 flex h-screen w-full flex-1 flex-col items-center justify-center gap-8  bg-white/80  backdrop-blur-sm transition-all sm:relative sm:h-min sm:flex-row sm:justify-end sm:bg-transparent',
+          'absolute inset-0 flex h-screen w-full flex-1 flex-col items-center justify-center gap-8 bg-white/80 backdrop-blur-sm transition-all sm:relative sm:h-min sm:flex-row sm:justify-end sm:bg-transparent',
           {
             'hidden sm:flex': !isMenuOpen,
             'border opacity-100 dark:bg-slate-600/90': isMenuOpen,
@@ -72,3 +76,5 @@ export default function Navbar({ isSticky }) {
     </div>
   )
 }
+
+export default Navbar

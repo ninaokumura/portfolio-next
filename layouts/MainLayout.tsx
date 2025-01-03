@@ -9,19 +9,30 @@ import avatarImg from '../public/images/me-square.jpg'
 import Navbar from '../components/Navbar'
 import Logo from '../components/Logo'
 
-export default function MainLayout(props) {
+interface MainLayoutProps {
+  title: string
+  children: React.ReactNode
+}
+
+const MainLayout: React.FC<MainLayoutProps> = ({ title, children }) => {
   const [sticky, setSticky] = useState(false)
 
   useEffect(() => {
-    document.addEventListener('scroll', () => {
+    const handleScroll = () => {
       setSticky(window.scrollY >= 80)
-    })
+    }
+
+    document.addEventListener('scroll', handleScroll)
+
+    return () => {
+      document.removeEventListener('scroll', handleScroll)
+    }
   }, [])
 
   return (
     <div>
       <Head>
-        <title>{props.title}</title>
+        <title>{title}</title>
       </Head>
       <div className="flex min-h-screen w-full flex-col bg-beige dark:bg-slate-700 dark:text-white">
         <header
@@ -54,7 +65,7 @@ export default function MainLayout(props) {
           </div>
         </header>
         <main className="m-auto grid w-full max-w-6xl flex-1 place-items-center overflow-x-hidden p-4  sm:p-8">
-          {props.children}
+          {children}
         </main>
         <footer className="m-auto grid h-20 w-full max-w-6xl place-items-center">
           <div className="flex items-center gap-1 ">
@@ -65,3 +76,5 @@ export default function MainLayout(props) {
     </div>
   )
 }
+
+export default MainLayout

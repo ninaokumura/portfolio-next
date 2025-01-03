@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -18,6 +19,22 @@ import { GrCertificate, GrCodeSandbox } from 'react-icons/gr'
 
 import { timelineItems } from './Timeline.data'
 
+// Define the type for an individual footer icon
+interface FooterIcon {
+  id: string // Matches the keys in the `icons` object
+  url: string
+}
+
+// Define the type for an individual timeline item
+interface TimelineItem {
+  timelineIconId: string // Matches the keys in the `icons` object
+  title: string
+  subtitle: string
+  duration: string
+  footerIcons: FooterIcon[]
+}
+
+// Icons mapping with TypeScript
 const icons = {
   react: FaReact,
   typescript: SiTypescript,
@@ -30,21 +47,22 @@ const icons = {
   javascript: SiJavascript,
   freecodecamp: FaFreeCodeCamp,
   sandbox: GrCodeSandbox,
-}
+} as const
 
-const timeline = timelineItems.slice().reverse()
+// Reverse the timeline array
+const timeline: TimelineItem[] = timelineItems.slice().reverse()
 
-export default function Timeline() {
+const Timeline: React.FC = () => {
   return (
-    <div className="m-auto grid w-full py-8 ">
+    <div className="m-auto grid w-full py-8">
       <VerticalTimeline>
         {timeline.map((item) => {
           const TimelineIcon = icons[item.timelineIconId]
           return (
             <VerticalTimelineElement
+              key={item.title}
               textClassName="dark:bg-slate-600 dark:shadow-slate-800 dark:!shadow-lg"
               contentArrowStyle={{ display: 'none' }}
-              key={item.title}
               date={item.duration}
               iconClassName="bg-teal dark:bg-terracota text-beige"
               icon={<TimelineIcon />}
@@ -56,7 +74,6 @@ export default function Timeline() {
               <div className="flex justify-center gap-2 p-2">
                 {item.footerIcons.map((icon) => {
                   const Icon = icons[icon.id]
-
                   return (
                     <span key={icon.id} className="text-2xl">
                       <a href={icon.url}>
@@ -77,3 +94,5 @@ export default function Timeline() {
     </div>
   )
 }
+
+export default Timeline
