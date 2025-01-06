@@ -137,7 +137,7 @@ const ContactForm: React.FC = () => {
 
       <div className="grid flex-1 place-items-center py-4">
         <div className="flex flex-col gap-2">
-          <h2 className="m-auto bg-brush px-8 text-xl font-semibold text-beige dark:bg-brush2 sm:text-3xl">
+          <h2 className="m-auto bg-brush px-8 text-xl font-semibold text-almond dark:bg-brush2 sm:text-3xl">
             Get in touch
           </h2>
           <div className="grid gap-2 p-4 text-sm font-semibold">

@@ -8,7 +8,7 @@ const Logo: React.FC<LogoProps> = (props) => {
   return (
     <div
       className={clsx(
-        'text-left font-brand text-xl hover:scale-[102%] hover:font-bold',
+        'text-left font-brand text-lg font-bold text-[#2cb67d]',
         props.className
       )}
     >

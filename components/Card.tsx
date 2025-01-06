@@ -17,7 +17,7 @@ const Card: React.FC<CardProps> & {
   Text: React.FC<CardProps>
 } = (props) => {
   return (
-    <div className="grid place-items-center gap-2 rounded-xl bg-beige p-2 shadow-2xl dark:bg-slate-600">
+    <div className="grid place-items-center gap-2 rounded-xl bg-almond p-2 shadow-2xl dark:bg-slate-600">
       {props.children}
     </div>
   )

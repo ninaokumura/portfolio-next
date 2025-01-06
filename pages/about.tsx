@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { BsArrowDownCircle } from 'react-icons/bs'
-import { timelineItems } from '../data/Timeline.data'
+import { timelineItems } from '../data/education-timeline.data'
 
 import Info from '../components/Info'
 import Timeline from '../components/Timeline/Timeline'
@@ -36,6 +36,7 @@ export default function About() {
     freecodecamp: FaFreeCodeCamp,
     sandbox: GrCodeSandbox,
   } as const
+
   // Example of dynamic timelineItems data
   const timelineItems2 = [
     {
@@ -60,10 +61,7 @@ export default function About() {
   return (
     <MainLayout title="About me">
       <div className="grid place-items-center border-2 border-black">
-        <Info
-          setShouldOpenCourses={setShouldOpenCourses}
-          setShouldOpenExperiences={setShouldOpenExperiences}
-        />
+        <Info />
       </div>
 
       {shouldOpenCourses && (

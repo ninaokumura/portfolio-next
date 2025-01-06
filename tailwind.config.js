@@ -10,7 +10,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: { beige: '#f8f5f2', terracota: '#f45d48', teal: '#078080' },
+      colors: { almond: '#16161a', terracota: '#464655', teal: '#D5CFE1' },
       fontFamily: {
         sans: "'Montserrat', sans-serif",
         brand: "'Roboto Mono', monospace",

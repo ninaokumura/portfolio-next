@@ -1,22 +1,12 @@
 import React from 'react'
-import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa'
-import { MdSchool, MdWork } from 'react-icons/md'
+// import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa'
+// import { MdSchool, MdWork } from 'react-icons/md'
 
-interface InfoProps {
-  setShouldOpenCourses: (value: boolean | ((prev: boolean) => boolean)) => void
-  setShouldOpenExperiences: (
-    value: boolean | ((prev: boolean) => boolean)
-  ) => void
-}
-
-export default function Info({
-  setShouldOpenCourses,
-  setShouldOpenExperiences,
-}: InfoProps) {
+export default function Info() {
   return (
-    <div className="p-2">
+    <div className="p-2  text-[#94a1b2]">
       <div className="grid place-items-center py-4">
-        <h3 className="text-dark text-center text-sm font-semibold sm:text-xl">
+        <h3 className="text-center text-sm font-semibold sm:text-xl">
           Thank you for stopping by 👋
         </h3>
 
@@ -39,20 +29,20 @@ export default function Info({
           </p>
         </div>
 
-        <span className="flex gap-6 py-4 text-3xl">
+        {/* <span className="flex gap-6 py-4 text-3xl">
           <a target="blank" href="https://github.com/ninaokumura">
-            <FaGithub />
+            <FaGithub color="#2cb67d" />
           </a>
           <a target="blank" href="">
-            <FaLinkedin />
+            <FaLinkedin color="#2cb67d" />
           </a>
           <button onClick={() => setShouldOpenCourses((prev) => !prev)}>
-            <MdSchool />
+            <MdSchool color="#2cb67d" />
           </button>
           <button onClick={() => setShouldOpenExperiences((prev) => !prev)}>
-            <MdWork />
+            <MdWork color="#2cb67d" />
           </button>
-        </span>
+        </span> */}
       </div>
     </div>
   )
