@@ -1,4 +1,10 @@
-export default function Youtube({ id }) {
+import React from 'react'
+
+interface YoutubeProps {
+  id: string
+}
+
+const Youtube: React.FC<YoutubeProps> = ({ id }) => {
   return (
     <div>
       <iframe
@@ -9,3 +15,5 @@ export default function Youtube({ id }) {
     </div>
   )
 }
+
+export default Youtube

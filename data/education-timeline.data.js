@@ -1,13 +1,13 @@
 export const timelineItems = [
   {
-    timelineIconId: 'typescript',
-    duration: 'Sep 22 - present',
-    title: 'React and Typescript',
-    subtitle: 'Udemy',
+    timelineIconId: 'aws',
+    duration: 'Oct 2024',
+    title: 'AWS Certified Cloud Practitioner',
+    subtitle: 'AWS',
     footerIcons: [
       {
         id: 'certificate',
-        url: '#',
+        url: 'https://www.credly.com/badges/b4815c68-4712-490e-aae8-0ba5fc207e2c/public_url',
       },
     ],
   },

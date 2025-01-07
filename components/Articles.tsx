@@ -1,10 +1,22 @@
+import React from 'react'
 import Card from './Card'
 import Link from 'next/link'
 
-export default function Articles(props) {
+interface BlogPost {
+  slug: string
+  title: string
+  excerpt: string
+  tags: string[]
+}
+
+interface ArticlesProps {
+  blogposts: BlogPost[]
+}
+
+const Articles: React.FC<ArticlesProps> = ({ blogposts }) => {
   return (
     <ul className="flex flex-col gap-10">
-      {props.blogposts.map((post) => (
+      {blogposts.map((post) => (
         <li key={post.slug} className="flex flex-col gap-2">
           <Link href={`/blog/${post.slug}`}>
             <a>
@@ -30,3 +42,5 @@ export default function Articles(props) {
     </ul>
   )
 }
+
+export default Articles
