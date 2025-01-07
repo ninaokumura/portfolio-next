@@ -1,65 +1,65 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, ChangeEvent, FormEvent } from 'react'
 
 import Input from './Input'
 import TextArea from './TextArea'
 import Button from './Button'
 
-const encode = (data) => {
+const encode = (data: Record<string, string>): string => {
   return Object.keys(data)
     .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
     .join('&')
 }
 
-export default function ContactForm() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-  const [submitted, setSubmitted] = useState(false)
-  const [submitError, setSubmitError] = useState('')
+const ContactForm: React.FC = () => {
+  const [name, setName] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [message, setMessage] = useState<string>('')
+  const [submitted, setSubmitted] = useState<boolean>(false)
+  const [submitError, setSubmitError] = useState<string>('')
 
-  const handleNameChange = (event) => {
+  const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value)
   }
 
-  const handleEmailChange = (event) => {
+  const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value)
   }
 
-  const handleMessageChange = (event) => {
+  const handleMessageChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(event.target.value)
   }
 
-  const handleSubmit = (event) => {
+  const handleResetForm = () => {
+    setName('')
+    setEmail('')
+    setMessage('')
+  }
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const formData = { name, email, message }
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...formData }),
-    })
-      .then(() => setSubmitted(true))
-
-      .catch((error) => setSubmitError(error.message))
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({ 'form-name': 'contact', ...formData }),
+      })
+      setSubmitted(true)
+      handleResetForm()
+    } catch (error) {
+      setSubmitError((error as Error).message)
+    }
   }
 
-  // const isFormValid = useMemo(() => {
-  //   if (name === '') {
-  //     return false
-  //   }
-  //   if (email === '') {
-  //     return false
-  //   }
-  //   if (message === '') {
-  //     return false
-  //   }
-  //   return true
-  // }, [name, email, message])
+  const isFormValid = useMemo(() => {
+    return name !== '' && email !== '' && message !== ''
+  }, [name, email, message])
 
   return (
     <div className="flex flex-col-reverse rounded-xl bg-[#fff]/40 shadow-lg dark:bg-slate-600 md:flex-row">
       <div className="relative flex-1">
-        <div className=" absolute -top-2 grid w-full place-items-center text-lg font-semibold">
+        <div className="absolute -top-2 grid w-full place-items-center text-lg font-semibold">
           {submitError && (
             <div className="rounded bg-gray-200 p-3 text-terracota">
               Failed to submit form: {submitError}
@@ -72,7 +72,7 @@ export default function ContactForm() {
           )}
         </div>
         <form
-          className="mb-4 rounded p-6 pt-12 pb-8 sm:p-8"
+          className="mb-4 rounded p-6 pb-8 pt-12 sm:p-8"
           name="contact"
           method="POST"
           data-netlify="true"
@@ -128,7 +128,7 @@ export default function ContactForm() {
             />
           </p>
           <div className="grid place-items-center">
-            <Button className="w-full" type="submit">
+            <Button className="w-full" type="submit" disabled={!isFormValid}>
               <span className="font-bold sm:text-lg">Submit</span>
             </Button>
           </div>
@@ -137,7 +137,7 @@ export default function ContactForm() {
 
       <div className="grid flex-1 place-items-center py-4">
         <div className="flex flex-col gap-2">
-          <h2 className="m-auto bg-brush px-8 text-xl font-semibold text-beige dark:bg-brush2 sm:text-3xl">
+          <h2 className="m-auto bg-brush px-8 text-xl font-semibold text-almond dark:bg-brush2 sm:text-3xl">
             Get in touch
           </h2>
           <div className="grid gap-2 p-4 text-sm font-semibold">
@@ -149,3 +149,5 @@ export default function ContactForm() {
     </div>
   )
 }
+
+export default ContactForm

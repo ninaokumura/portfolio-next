@@ -1,5 +1,29 @@
 export const timelineItems = [
   {
+    timelineIconId: 'typescript',
+    duration: 'Sep 22 - present',
+    title: 'React and Typescript',
+    subtitle: 'Udemy',
+    footerIcons: [
+      {
+        id: 'certificate',
+        url: '#',
+      },
+    ],
+  },
+  {
+    timelineIconId: 'react',
+    duration: 'Jun 22 - Aug 22',
+    title: 'React (Hooks, React Router, Redux)',
+    subtitle: 'Udemy',
+    footerIcons: [
+      {
+        id: 'certificate',
+        url: 'https://www.udemy.com/certificate/UC-728b6207-4f1d-48df-ac5c-6506b1154258/',
+      },
+    ],
+  },
+  {
     timelineIconId: 'mongodb',
     duration: 'Feb 22 - Feb 22',
     title: 'MongoDB for JavaScript Developers',
@@ -39,7 +63,7 @@ export const timelineItems = [
     timelineIconId: 'node',
     duration: 'Oct 2021 - Dec 2021',
     title: 'Node.js Bootcamp',
-    subtitle: 'Jonas Schmedtmann - Udemy',
+    subtitle: 'Udemy',
     footerIcons: [
       {
         id: 'certificate',
@@ -48,23 +72,12 @@ export const timelineItems = [
       { id: 'github', url: 'https://github.com/ninaokumura/natours-app' },
     ],
   },
-  {
-    timelineIconId: 'graduation',
-    duration: 'Aug 2021 - Oct 2021',
-    title: 'Enspiral Dev Academy',
-    subtitle: 'Coding Bootcamp',
-    footerIcons: [
-      {
-        id: 'github',
-        url: 'https://github.com/ninaokumura/ninaokumura.github.io',
-      },
-    ],
-  },
+
   {
     timelineIconId: 'html',
     duration: 'Aug 2021 - Aug 2021',
     title: 'HTML & CSS',
-    subtitle: 'Jonas Schmedtmann - Udemy',
+    subtitle: 'Udemy',
     footerIcons: [
       {
         id: 'certificate',
@@ -77,7 +90,7 @@ export const timelineItems = [
     timelineIconId: 'javascript',
     duration: 'Jun 2021 - Aug 2021',
     title: 'JavaScript',
-    subtitle: 'Jonas Schemdtmann - Udemy',
+    subtitle: 'Udemy',
     footerIcons: [
       {
         id: 'certificate',

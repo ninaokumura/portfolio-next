@@ -97,6 +97,50 @@ const projects = [
       { id: 'tailwind' },
     ],
   },
+  {
+    img: require('../public/images/card-component.jpg'),
+    title: 'Interactive card component',
+
+    codeUrl: 'https://github.com/ninaokumura/interactive-card-details',
+    demoUrl: 'https://ninaokumura.github.io/interactive-card-details/',
+    techIconsId: [
+      {
+        id: 'react',
+      },
+
+      { id: 'tailwind' },
+    ],
+  },
+  {
+    img: require('../public/images/todo.jpg'),
+    title: 'Todo app',
+
+    codeUrl: 'https://github.com/ninaokumura/todo-app',
+    demoUrl: 'https://ninaokumura.github.io/todo-app/',
+    techIconsId: [
+      { id: 'typescript' },
+      {
+        id: 'react',
+      },
+
+      { id: 'tailwind' },
+    ],
+  },
+  {
+    img: require('../public/images/space-tour.jpg'),
+    title: 'Space tour',
+
+    codeUrl: 'https://github.com/ninaokumura/space-tour',
+    demoUrl: 'https://space-tour-amber.vercel.app/',
+    techIconsId: [
+      { id: 'nextJs' },
+      {
+        id: 'react',
+      },
+
+      { id: 'tailwind' },
+    ],
+  },
 ]
 
 export default projects
