@@ -52,7 +52,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
       <Head>
         <title>{title}</title>
       </Head>
-      <div className="flex min-h-screen w-full flex-col bg-almond dark:text-white">
+      <div className="flex min-h-screen w-full flex-col bg-almond">
         <header
           className={clsx(
             'visible sticky top-0 z-10 backdrop-blur-md transition-all',
@@ -61,7 +61,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
             }
           )}
         >
-          <div className="m-auto flex w-full justify-between p-8 align-middle">
+          <div className="m-auto flex w-full justify-between bg-almond p-8 align-middle">
             <div className="flex items-center gap-4">
               <Link href="/">
                 <a className="flex items-end gap-4">
@@ -74,7 +74,9 @@ const MainLayout: React.FC<MainLayoutProps> = ({
                     height={45}
                     width={45}
                   />
-                  <Logo />
+                  <div className="hidden sm:block">
+                    <Logo />
+                  </div>
                 </a>
               </Link>
             </div>
@@ -91,7 +93,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
             />
           </div>
         </header>
-        <main className="m-auto grid w-full max-w-6xl flex-1 place-items-center overflow-x-hidden p-4 sm:p-8">
+        <main className="m-auto grid w-full flex-1 place-items-center overflow-x-hidden p-4 sm:max-w-6xl sm:p-8">
           {children}
         </main>
         <footer className="m-auto grid h-20 w-full max-w-6xl place-items-center text-[#fffffe]">

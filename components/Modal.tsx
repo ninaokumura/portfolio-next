@@ -26,10 +26,7 @@ const Modal: React.FC<ModalProps> = ({
       }
     }
 
-    // Add the event listener for mouse clicks
     document.addEventListener('mousedown', handleOutsideClick)
-
-    // Cleanup the event listener when the component is unmounted
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick)
     }
@@ -41,7 +38,7 @@ const Modal: React.FC<ModalProps> = ({
     <>
       {/* Blurred Overlay */}
       <div
-        className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
+        className="fixed inset-0 z-40 bg-black bg-opacity-50 backdrop-blur-sm"
         onClick={onClose}
       />
 
@@ -53,18 +50,22 @@ const Modal: React.FC<ModalProps> = ({
       >
         <div
           ref={modalRef}
-          className={`shadow-4xl relative mx-4 my-8 w-full max-w-6xl scale-90 transform overflow-hidden rounded-lg bg-almond opacity-0 shadow-lg transition-all duration-300 ease-out ${
-            isOpen ? 'scale-100 opacity-100' : ''
-          }`}
+          className={`relative h-screen w-screen overflow-hidden bg-almond shadow-lg transition-all duration-300 ease-out sm:mx-4 sm:my-8 sm:max-h-[80vh] sm:max-w-6xl sm:rounded-lg ${
+            isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
+          } ${className || ''}`}
         >
           {/* Header with Close Button */}
-          <div className="flex justify-end p-2">
+          <div className="flex justify-end p-4">
             <button
               onClick={onClose}
               aria-label="Close"
-              className="text-white hover:text-[#A78BFA]"
+              className="text-black hover:text-[#A78BFA]"
             >
-              <CgCloseO size={'32px'} />
+              <CgCloseO
+                size={'32px'}
+                color="#fff"
+                className="hover:fill-[#A78BFA]"
+              />
             </button>
           </div>
           {/* Scrollable Content */}
