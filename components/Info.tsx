@@ -10,16 +10,24 @@ export default function Info() {
 
         <div className="w-[100%] py-12 text-justify text-lg sm:px-[80px] ">
           <p className="md:leading-12 p-2 text-justify leading-loose">
-            I'm a self-taught web developer based in Auckland, New Zealand. My
-            passion for programming began in early 2021, and since then I've
-            been actively learning new technologies and tools, such as HTML,
-            CSS, JavaScript, Node, React, Tailwindcss, and most recently
-            Typescript and A11y.
+            I am a software engineer with two years of professional experience
+            at a leading telecom company in Auclkand, New Zealand. I specialize
+            in frontend development, using modern technologies such as React,
+            TypeScript, and GraphQL to build dynamic, user-focused web
+            applications.
+          </p>
+          <p className="p-2 text-justify leading-loose">
+            During my time working on the design system team, I have developed a
+            strong interest in web accessibility, where I focused on improving
+            accessibility across the website and creating inclusive experiences
+            for all users.
           </p>
 
           <p className="p-2 text-justify leading-loose md:leading-8">
-            I am a quick learner and team player keen to leverage my technical
-            and people skills to contribute to meaningful projects.
+            With a strong curiosity and dedication to continuous learning, I
+            focus on solving intricate problems while delivering scalable,
+            maintainable solutions and a proactive approach to learning new
+            tools and technologies.
           </p>
         </div>
       </div>

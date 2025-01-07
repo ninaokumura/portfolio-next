@@ -70,7 +70,7 @@ const Modal: React.FC<ModalProps> = ({
           </div>
           {/* Scrollable Content */}
           <div
-            className={`max-h-[80vh] overflow-y-auto p-6 ${className || ''}`}
+            className={`h-full overflow-y-auto p-6`}
             style={{
               scrollbarWidth: 'none', // Firefox
               msOverflowStyle: 'none', // Internet Explorer
