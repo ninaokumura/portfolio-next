@@ -40,11 +40,21 @@ const icons = {
 interface MainLayoutProps {
   title: string
   children: React.ReactNode
+  setShouldOpenCourses?: (value: boolean | ((prev: boolean) => boolean)) => void
+  setShouldOpenExperiences?: (
+    value: boolean | ((prev: boolean) => boolean)
+  ) => void
+  setIsModalOpen?: (value: boolean | ((prev: boolean) => boolean)) => void
 }
 
-const MainLayout: React.FC<MainLayoutProps> = ({ title, children }) => {
+const MainLayout: React.FC<MainLayoutProps> = ({
+  title,
+  children,
+  setShouldOpenCourses,
+  setShouldOpenExperiences,
+  setIsModalOpen,
+}) => {
   const [sticky, setSticky] = useState(false)
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
   const [timelineType, setTimelineType] = useState<
     'courses' | 'experiences' | null
   >(null)
@@ -64,11 +74,6 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }) => {
   const openTimelineModal = (type: 'courses' | 'experiences') => {
     setTimelineType(type)
     setIsModalOpen(true)
-  }
-
-  const closeModal = () => {
-    setIsModalOpen(false)
-    setTimelineType(null)
   }
 
   return (
@@ -104,8 +109,14 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }) => {
             </div>
             <Navbar
               isSticky={sticky}
-              onHandleEducationTimeline={() => openTimelineModal('courses')}
-              onHanldleWorkTimeline={() => openTimelineModal('experiences')}
+              onHandleEducationTimeline={() => {
+                openTimelineModal('courses')
+                setShouldOpenCourses(true)
+              }}
+              onHanldleWorkTimeline={() => {
+                openTimelineModal('experiences')
+                setShouldOpenExperiences(true)
+              }}
             />
           </div>
         </header>
@@ -118,10 +129,6 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }) => {
           </div>
         </footer>
       </div>
-
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <Timeline timelineItems={timelineItems} icons={icons} />
-      </Modal>
     </div>
   )
 }
