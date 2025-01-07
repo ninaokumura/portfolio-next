@@ -12,9 +12,8 @@ module.exports = {
     extend: {
       colors: { almond: '#16161a', terracota: '#464655', teal: '#D5CFE1' },
       fontFamily: {
-        sans: "'Montserrat', sans-serif",
-        brand: "'Roboto Mono', monospace",
-        typewriter: "'Cutive Mono', monospace",
+        sans: "'Karla', sans-serif",
+        brand: "'Karla', monospace",
       },
       backgroundImage: {
         brush: "url('//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=078080')",

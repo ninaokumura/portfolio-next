@@ -41,16 +41,32 @@ const Navbar: React.FC<NavbarProps> = ({
     <div className="flex flex-1 items-end justify-end text-[#94a1b2]">
       <span className="flex gap-6 py-4 text-3xl">
         <a target="blank" href="https://github.com/ninaokumura">
-          <FaGithub color="#2cb67d" size="24px" />
+          <FaGithub
+            color="#A09BE7"
+            size="24px"
+            className="hover:fill-[#A78BFA]"
+          />
         </a>
         <a target="blank" href="">
-          <FaLinkedin color="#2cb67d" size="24px" />
+          <FaLinkedin
+            color="#A09BE7"
+            size="24px"
+            className="hover:fill-[#A78BFA]"
+          />
         </a>
         <button onClick={onHandleEducationTimeline}>
-          <MdSchool color="#2cb67d" size="24px" />
+          <MdSchool
+            color="#A09BE7"
+            size="24px"
+            className="hover:fill-[#A78BFA]"
+          />
         </button>
         <button onClick={onHanldleWorkTimeline}>
-          <MdWork color="#2cb67d" size="24px" />
+          <MdWork
+            color="#A09BE7"
+            size="24px"
+            className="hover:fill-[#A78BFA]"
+          />
         </button>
       </span>
     </div>

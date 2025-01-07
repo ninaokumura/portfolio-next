@@ -8,6 +8,7 @@ import avatarImg from '../public/images/me-square.jpg'
 import Navbar from '../components/Navbar'
 import Logo from '../components/Logo'
 import Timeline from '../components/Timeline/Timeline'
+import Modal from '../components/Modal'
 
 import { timelineItems } from '../data/education-timeline.data'
 
@@ -43,9 +44,10 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ title, children }) => {
   const [sticky, setSticky] = useState(false)
-  const [shouldOpenCourses, setShouldOpenCourses] = useState<boolean>(false)
-  const [shouldOpenExperiences, setShouldOpenExperiences] =
-    useState<boolean>(false)
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+  const [timelineType, setTimelineType] = useState<
+    'courses' | 'experiences' | null
+  >(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,16 +61,14 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }) => {
     }
   }, [])
 
-  const areTimelinesOpen = shouldOpenCourses || shouldOpenExperiences
-
-  const handleToggleCourses = () => {
-    setShouldOpenCourses((prev) => !prev)
-    setShouldOpenExperiences(false) // Ensure experiences timeline is closed
+  const openTimelineModal = (type: 'courses' | 'experiences') => {
+    setTimelineType(type)
+    setIsModalOpen(true)
   }
 
-  const handleToggleExperiences = () => {
-    setShouldOpenExperiences((prev) => !prev)
-    setShouldOpenCourses(false) // Ensure courses timeline is closed
+  const closeModal = () => {
+    setIsModalOpen(false)
+    setTimelineType(null)
   }
 
   return (
@@ -76,7 +76,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className="flex min-h-screen w-full flex-col bg-almond dark:bg-slate-700 dark:text-white">
+      <div className="flex min-h-screen w-full flex-col bg-almond dark:text-white">
         <header
           className={clsx(
             'visible sticky top-0 z-10 backdrop-blur-md transition-all',
@@ -104,32 +104,24 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }) => {
             </div>
             <Navbar
               isSticky={sticky}
-              onHandleEducationTimeline={handleToggleCourses}
-              onHanldleWorkTimeline={handleToggleExperiences}
+              onHandleEducationTimeline={() => openTimelineModal('courses')}
+              onHanldleWorkTimeline={() => openTimelineModal('experiences')}
             />
           </div>
         </header>
         <main className="m-auto grid w-full max-w-6xl flex-1 place-items-center overflow-x-hidden p-4 sm:p-8">
-          {!areTimelinesOpen && <div className="">{children}</div>}
-
-          {shouldOpenCourses && (
-            <div id="timeline" className="w-full">
-              <Timeline timelineItems={timelineItems} icons={icons} />
-            </div>
-          )}
-
-          {shouldOpenExperiences && (
-            <div id="timeline" className="w-full">
-              <Timeline timelineItems={timelineItems} icons={icons} />
-            </div>
-          )}
+          {children}
         </main>
-        <footer className="m-auto grid h-20 w-full max-w-6xl place-items-center text-[#72757e]">
+        <footer className="m-auto grid h-20 w-full max-w-6xl place-items-center text-[#fffffe]">
           <div className="flex items-center gap-1">
             Made with <FaHeart /> by Nina
           </div>
         </footer>
       </div>
+
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+        <Timeline timelineItems={timelineItems} icons={icons} />
+      </Modal>
     </div>
   )
 }

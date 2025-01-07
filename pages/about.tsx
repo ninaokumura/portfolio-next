@@ -60,18 +60,16 @@ export default function About() {
 
   return (
     <MainLayout title="About me">
-      <div className="grid place-items-center border-2 border-black">
-        <Info />
-      </div>
+      <Info />
 
       {shouldOpenCourses && (
-        <div id="timeline" className="w-full ">
+        <div id="timeline" className="w-full">
           <Timeline timelineItems={timelineItems} icons={icons} />
         </div>
       )}
 
       {shouldOpenExperiences && (
-        <div id="timeline" className="w-full ">
+        <div id="timeline" className="w-full">
           <Timeline timelineItems={timelineItems2} icons={icons} />
         </div>
       )}
