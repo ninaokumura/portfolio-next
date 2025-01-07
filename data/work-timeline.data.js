@@ -1,6 +1,6 @@
 export const timelineWorkItems = [
   {
-    timelineIconId: 'typescript',
+    timelineIconId: 'mac',
     duration: 'Sep 22 - present',
     title: 'Spark New Zealand - AUCKLAND',
     subtitle: 'Web Developer',
@@ -12,7 +12,7 @@ export const timelineWorkItems = [
     ],
   },
   {
-    timelineIconId: 'react',
+    timelineIconId: 'mac',
     duration: 'Jun 22 - Aug 22',
     title: 'Capital Preferences - CHRISTCHURCH',
     subtitle: 'Web Developer | Intern',

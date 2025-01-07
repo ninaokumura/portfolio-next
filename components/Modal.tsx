@@ -17,7 +17,6 @@ const Modal: React.FC<ModalProps> = ({
   const modalRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    // Close the modal if the user clicks outside of it
     const handleOutsideClick = (event: MouseEvent) => {
       if (
         modalRef.current &&

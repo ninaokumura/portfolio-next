@@ -7,35 +7,6 @@ import { FaHeart } from 'react-icons/fa'
 import avatarImg from '../public/images/me-square.jpg'
 import Navbar from '../components/Navbar'
 import Logo from '../components/Logo'
-import Timeline from '../components/Timeline/Timeline'
-import Modal from '../components/Modal'
-
-import { timelineItems } from '../data/education-timeline.data'
-
-import {
-  FaNodeJs,
-  FaReact,
-  FaHtml5,
-  FaGithub,
-  FaGraduationCap,
-  FaFreeCodeCamp,
-} from 'react-icons/fa'
-import { SiJavascript, SiMongodb, SiTypescript } from 'react-icons/si'
-import { GrCertificate, GrCodeSandbox, GrStar } from 'react-icons/gr'
-
-const icons = {
-  react: FaReact,
-  typescript: SiTypescript,
-  certificate: GrCertificate,
-  mongodb: SiMongodb,
-  node: FaNodeJs,
-  github: FaGithub,
-  graduation: FaGraduationCap,
-  html: FaHtml5,
-  javascript: SiJavascript,
-  freecodecamp: FaFreeCodeCamp,
-  sandbox: GrCodeSandbox,
-} as const
 
 interface MainLayoutProps {
   title: string

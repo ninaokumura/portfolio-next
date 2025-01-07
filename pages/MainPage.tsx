@@ -13,7 +13,9 @@ import {
   FaGithub,
   FaGraduationCap,
   FaFreeCodeCamp,
+  FaAws,
 } from 'react-icons/fa'
+import { MdLaptopMac } from 'react-icons/md'
 import { SiJavascript, SiMongodb, SiTypescript } from 'react-icons/si'
 import { GrCertificate, GrCodeSandbox } from 'react-icons/gr'
 import Modal from '../components/Modal'
@@ -42,6 +44,8 @@ export default function MainPage() {
     javascript: SiJavascript,
     freecodecamp: FaFreeCodeCamp,
     sandbox: GrCodeSandbox,
+    aws: FaAws,
+    mac: MdLaptopMac,
   } as const
 
   const closeModal = () => {
