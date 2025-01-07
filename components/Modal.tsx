@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect, useRef } from 'react'
 import { CgCloseO } from 'react-icons/cg'
 
 type ModalProps = {
@@ -14,6 +14,28 @@ const Modal: React.FC<ModalProps> = ({
   children,
   className,
 }) => {
+  const modalRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    // Close the modal if the user clicks outside of it
+    const handleOutsideClick = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        onClose()
+      }
+    }
+
+    // Add the event listener for mouse clicks
+    document.addEventListener('mousedown', handleOutsideClick)
+
+    // Cleanup the event listener when the component is unmounted
+    return () => {
+      document.removeEventListener('mousedown', handleOutsideClick)
+    }
+  }, [onClose])
+
   if (!isOpen) return null
 
   return (
@@ -30,13 +52,18 @@ const Modal: React.FC<ModalProps> = ({
         role="dialog"
         aria-modal="true"
       >
-        <div className="shadow-4xl relative mx-4 w-full max-w-6xl overflow-hidden rounded-xl bg-almond">
+        <div
+          ref={modalRef}
+          className={`shadow-4xl relative mx-4 my-8 w-full max-w-6xl scale-90 transform overflow-hidden rounded-lg bg-almond opacity-0 shadow-lg transition-all duration-300 ease-out ${
+            isOpen ? 'scale-100 opacity-100' : ''
+          }`}
+        >
           {/* Header with Close Button */}
           <div className="flex justify-end p-2">
             <button
               onClick={onClose}
-              className="text-gray-600 hover:text-gray-800 focus:outline-none"
               aria-label="Close"
+              className="text-white hover:text-[#A78BFA]"
             >
               <CgCloseO size={'32px'} />
             </button>

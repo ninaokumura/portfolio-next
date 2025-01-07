@@ -114,7 +114,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ title, children }) => {
         </main>
         <footer className="m-auto grid h-20 w-full max-w-6xl place-items-center text-[#fffffe]">
           <div className="flex items-center gap-1">
-            Made with <FaHeart /> by Nina
+            <FaHeart />
           </div>
         </footer>
       </div>

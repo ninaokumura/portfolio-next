@@ -40,20 +40,6 @@ const Navbar: React.FC<NavbarProps> = ({
   return (
     <div className="flex flex-1 items-end justify-end text-[#94a1b2]">
       <span className="flex gap-6 py-4 text-3xl">
-        <a target="blank" href="https://github.com/ninaokumura">
-          <FaGithub
-            color="#A09BE7"
-            size="24px"
-            className="hover:fill-[#A78BFA]"
-          />
-        </a>
-        <a target="blank" href="">
-          <FaLinkedin
-            color="#A09BE7"
-            size="24px"
-            className="hover:fill-[#A78BFA]"
-          />
-        </a>
         <button onClick={onHandleEducationTimeline}>
           <MdSchool
             color="#A09BE7"
@@ -68,6 +54,20 @@ const Navbar: React.FC<NavbarProps> = ({
             className="hover:fill-[#A78BFA]"
           />
         </button>
+        <a target="blank" href="https://github.com/ninaokumura">
+          <FaGithub
+            color="#A09BE7"
+            size="24px"
+            className="hover:fill-[#A78BFA]"
+          />
+        </a>
+        <a target="blank" href="">
+          <FaLinkedin
+            color="#A09BE7"
+            size="24px"
+            className="hover:fill-[#A78BFA]"
+          />
+        </a>
       </span>
     </div>
   )
