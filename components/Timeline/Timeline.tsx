@@ -5,27 +5,24 @@ import {
 } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
 import { FaStar } from 'react-icons/fa'
-// Define the type for an individual footer icon
+
 interface FooterIcon {
-  id: string // Matches the keys in the `icons` object
+  id: string
   url: string
 }
 
-// Define the type for an individual timeline item
 interface TimelineItem {
-  timelineIconId: string // Matches the keys in the `icons` object
+  timelineIconId: string
   title: string
   subtitle: string
   duration: string
-  footerIcons: FooterIcon[]
+  footerIcons?: FooterIcon[]
 }
 
-// Icons mapping with TypeScript
 interface Icons {
   [key: string]: React.ComponentType<{ className?: string }>
 }
 
-// Refactor Timeline to accept data and icons as props
 interface TimelineProps {
   timelineItems: TimelineItem[]
   icons: Icons
@@ -41,7 +38,7 @@ const Timeline: React.FC<TimelineProps> = ({ timelineItems, icons }) => {
           // Safeguard if TimelineIcon is undefined
           if (!TimelineIcon) {
             console.error(`Icon for ${item.timelineIconId} not found!`)
-            return null // Skip rendering if icon is invalid
+            return null
           }
 
           return (
@@ -53,31 +50,37 @@ const Timeline: React.FC<TimelineProps> = ({ timelineItems, icons }) => {
               contentStyle={{
                 borderRadius: '12px',
                 border: 'none',
-                background: '##72757e', // Semi-transparent white
-                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)', // Optional: Adds depth
+                background: '##72757e',
+                boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
               }}
               icon={<TimelineIcon />}
             >
-              <h3 className="text-md text-center font-bold sm:text-xl">
+              <h3 className="text-md mb-4 text-center font-bold sm:text-xl">
                 {item.title}
               </h3>
-              <p className="pb-4 text-center">{item.subtitle}</p>
-              <div className="flex justify-center gap-2 p-2">
-                {item.footerIcons.map((icon) => {
-                  const Icon = icons[icon.id]
-                  if (!Icon) {
-                    console.error(`Icon for ${icon.id} not found!`)
-                    return null
-                  }
-                  return (
-                    <span key={icon.id} className="text-2xl">
-                      <a href={icon.url}>
-                        <Icon className="bg-white dark:bg-black dark:text-black dark:invert dark:invert" />
-                      </a>
-                    </span>
-                  )
-                })}
-              </div>
+
+              <h4 className="text-center font-bold">{item.subtitle}</h4>
+              <h4 className="mb-2 text-center">{item.duration}</h4>
+
+              {/* Conditionally render footer icons */}
+              {item.footerIcons && item.footerIcons.length > 0 && (
+                <div className="flex justify-center gap-2 p-2">
+                  {item.footerIcons.map((icon) => {
+                    const Icon = icons[icon.id]
+                    if (!Icon) {
+                      console.error(`Icon for ${icon.id} not found!`)
+                      return null
+                    }
+                    return (
+                      <span key={icon.id} className="text-2xl">
+                        <a href={icon.url}>
+                          <Icon className="bg-white dark:bg-black dark:text-black dark:invert dark:invert" />
+                        </a>
+                      </span>
+                    )
+                  })}
+                </div>
+              )}
             </VerticalTimelineElement>
           )
         })}

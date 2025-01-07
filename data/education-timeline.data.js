@@ -1,7 +1,7 @@
 export const timelineItems = [
   {
     timelineIconId: 'aws',
-    duration: 'Oct 2024',
+    duration: '',
     title: 'AWS Certified Cloud Practitioner',
     subtitle: 'AWS',
     footerIcons: [
@@ -13,7 +13,7 @@ export const timelineItems = [
   },
   {
     timelineIconId: 'react',
-    duration: 'Jun 22 - Aug 22',
+    duration: '',
     title: 'React (Hooks, React Router, Redux)',
     subtitle: 'Udemy',
     footerIcons: [
@@ -25,7 +25,7 @@ export const timelineItems = [
   },
   {
     timelineIconId: 'mongodb',
-    duration: 'Feb 22 - Feb 22',
+    duration: '',
     title: 'MongoDB for JavaScript Developers',
     subtitle: 'MongoDB',
     footerIcons: [
@@ -37,7 +37,7 @@ export const timelineItems = [
   },
   {
     timelineIconId: 'react',
-    duration: 'Dec 2021 - Jan 22',
+    duration: '',
     title: 'React Fundamentals',
     subtitle: 'Kent C. Dodds',
     footerIcons: [
@@ -49,7 +49,7 @@ export const timelineItems = [
   },
   {
     timelineIconId: 'mongodb',
-    duration: 'Dec 2021 - Dec 2021',
+    duration: '',
     title: 'MongoDB Basics',
     subtitle: 'MongoDB',
     footerIcons: [
@@ -61,7 +61,7 @@ export const timelineItems = [
   },
   {
     timelineIconId: 'node',
-    duration: 'Oct 2021 - Dec 2021',
+    duration: '',
     title: 'Node.js Bootcamp',
     subtitle: 'Udemy',
     footerIcons: [
@@ -75,7 +75,7 @@ export const timelineItems = [
 
   {
     timelineIconId: 'html',
-    duration: 'Aug 2021 - Aug 2021',
+    duration: '',
     title: 'HTML & CSS',
     subtitle: 'Udemy',
     footerIcons: [
@@ -88,7 +88,7 @@ export const timelineItems = [
   },
   {
     timelineIconId: 'javascript',
-    duration: 'Jun 2021 - Aug 2021',
+    duration: '',
     title: 'JavaScript',
     subtitle: 'Udemy',
     footerIcons: [
@@ -101,7 +101,7 @@ export const timelineItems = [
   },
   {
     timelineIconId: 'freecodecamp',
-    duration: 'Feb 2021 - Mar 2021',
+    duration: '',
     title: 'Responsive Web Design',
     subtitle: 'FreeCodeCamp',
     footerIcons: [
