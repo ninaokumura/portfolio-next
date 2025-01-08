@@ -52,7 +52,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
       <Head>
         <title>{title}</title>
       </Head>
-      <div className="flex min-h-screen w-full flex-col bg-almond">
+      <div className="flex min-h-screen w-full flex-col bg-gradient-to-br from-gray-900 via-purple-900 to-violet-800">
         <header
           className={clsx(
             'visible sticky top-0 z-10 backdrop-blur-md transition-all',
@@ -61,7 +61,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
             }
           )}
         >
-          <div className="m-auto flex w-full justify-between bg-almond p-8 align-middle">
+          <div className="m-auto flex w-full justify-between p-8 align-middle">
             <div className="flex items-center gap-4">
               <Link href="/">
                 <a className="flex items-end gap-4">
@@ -71,12 +71,9 @@ const MainLayout: React.FC<MainLayoutProps> = ({
                     placeholder="blur"
                     src={avatarImg}
                     alt="avatar"
-                    height={45}
-                    width={45}
+                    height={50}
+                    width={50}
                   />
-                  <div className="hidden sm:block">
-                    <Logo />
-                  </div>
                 </a>
               </Link>
             </div>

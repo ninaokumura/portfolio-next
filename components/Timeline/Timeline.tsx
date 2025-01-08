@@ -46,7 +46,7 @@ const Timeline: React.FC<TimelineProps> = ({ timelineItems, icons }) => {
               key={item.title}
               textClassName="bg-almond  shadow-2xl border-2"
               contentArrowStyle={{ display: 'none' }}
-              iconClassName="bg-[#A09BE7] text-[#fffffe] dark:bg-[#7f5af0] dark:text-[#fffffe]"
+              iconClassName="bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 text-[#fffffe] dark:bg-[#7f5af0] dark:text-[#fffffe]"
               contentStyle={{
                 borderRadius: '12px',
                 border: 'none',
@@ -74,7 +74,7 @@ const Timeline: React.FC<TimelineProps> = ({ timelineItems, icons }) => {
                     return (
                       <span key={icon.id} className="text-2xl">
                         <a href={icon.url}>
-                          <Icon className="bg-white dark:bg-black dark:text-black dark:invert dark:invert" />
+                          <Icon className="bg-white dark:bg-black dark:text-black dark:invert" />
                         </a>
                       </span>
                     )
@@ -85,7 +85,7 @@ const Timeline: React.FC<TimelineProps> = ({ timelineItems, icons }) => {
           )
         })}
         <VerticalTimelineElement
-          iconClassName=" text-teal dark:text-terracota opacity-1 bg-[#A09BE7] border-2 border-red"
+          iconClassName=" text-teal dark:text-terracota opacity-1 bg-gradient-to-r from-pink-500 via-red-500 to-orange-500"
           icon={<FaStar color="#fffffe" />}
         />
       </VerticalTimeline>

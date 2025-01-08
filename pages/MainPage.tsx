@@ -28,7 +28,6 @@ export default function MainPage() {
     'courses' | 'experiences' | null
   >(null)
 
-  console.log(timelineWorkItems)
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
 
   // Define the icons object that you want to pass

@@ -13,17 +13,6 @@ interface NavbarProps {
   onHanldleWorkTimeline?: () => void
 }
 
-const links = [
-  {
-    label: 'Blog',
-    href: '/blog',
-  },
-  {
-    label: 'Say Hello',
-    href: '/contact',
-  },
-]
-
 const Navbar: React.FC<NavbarProps> = ({
   onHandleEducationTimeline,
   onHanldleWorkTimeline,
@@ -39,34 +28,32 @@ const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <div className="flex flex-1 items-end justify-end text-[#94a1b2]">
-      <span className="flex gap-6 py-4 text-3xl">
-        <button onClick={onHandleEducationTimeline}>
-          <MdSchool
-            color="#A09BE7"
-            size="24px"
-            className="hover:fill-[#A78BFA]"
-          />
+      <span className="flex py-4 text-3xl sm:gap-4">
+        <button
+          onClick={onHandleEducationTimeline}
+          className="rounded-full border-2 border-transparent p-2 ring-[#A78BFA] transition-all duration-300 hover:bg-gradient-to-r hover:from-pink-500 hover:via-red-500 hover:to-orange-500"
+        >
+          <MdSchool color="#fffe" size="24px" />
         </button>
-        <button onClick={onHanldleWorkTimeline}>
-          <MdWork
-            color="#A09BE7"
-            size="24px"
-            className="hover:fill-[#A78BFA]"
-          />
+        <button
+          onClick={onHanldleWorkTimeline}
+          className="rounded-full border-2 border-transparent p-2 transition-all duration-300 hover:bg-gradient-to-r hover:from-pink-500 hover:via-red-500 hover:to-orange-500"
+        >
+          <MdWork color="#fffe" size="24px" />
         </button>
-        <a target="blank" href="https://github.com/ninaokumura">
-          <FaGithub
-            color="#A09BE7"
-            size="24px"
-            className="hover:fill-[#A78BFA]"
-          />
+        <a
+          target="blank"
+          href="https://github.com/ninaokumura"
+          className="rounded-full border-2 border-transparent p-2 transition-all duration-300 hover:bg-gradient-to-r hover:from-pink-500 hover:via-red-500 hover:to-orange-500"
+        >
+          <FaGithub color="#fffe" size="24px" />
         </a>
-        <a target="blank" href="">
-          <FaLinkedin
-            color="#A09BE7"
-            size="24px"
-            className="hover:fill-[#A78BFA]"
-          />
+        <a
+          target="blank"
+          href=""
+          className="rounded-full border-2 border-transparent p-2 transition-all duration-300 hover:bg-gradient-to-r hover:from-pink-500 hover:via-red-500 hover:to-orange-500"
+        >
+          <FaLinkedin color="#fffe" size="24px" />
         </a>
       </span>
     </div>

@@ -50,7 +50,7 @@ const Modal: React.FC<ModalProps> = ({
       >
         <div
           ref={modalRef}
-          className={`relative h-screen w-screen overflow-hidden bg-almond shadow-lg transition-all duration-300 ease-out sm:mx-4 sm:my-8 sm:max-h-[80vh] sm:max-w-6xl sm:rounded-lg ${
+          className={`relative h-screen w-screen overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-violet-800 shadow-lg transition-all duration-300 ease-out sm:mx-4 sm:my-8 sm:max-h-[80vh] sm:max-w-6xl sm:rounded-xl ${
             isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
           } ${className || ''}`}
         >
@@ -59,13 +59,9 @@ const Modal: React.FC<ModalProps> = ({
             <button
               onClick={onClose}
               aria-label="Close"
-              className="text-black hover:text-[#A78BFA]"
+              className="border-2 border-transparent text-black transition-all duration-300 hover:rounded-full hover:border-[#fff] hover:bg-transparent"
             >
-              <CgCloseO
-                size={'32px'}
-                color="#fff"
-                className="hover:fill-[#A78BFA]"
-              />
+              <CgCloseO size={'32px'} color="#fff" />
             </button>
           </div>
           {/* Scrollable Content */}
