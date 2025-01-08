@@ -36,13 +36,11 @@ const Modal: React.FC<ModalProps> = ({
 
   return (
     <>
-      {/* Blurred Overlay */}
       <div
         className="fixed inset-0 z-40 bg-black bg-opacity-50 backdrop-blur-sm"
         onClick={onClose}
       />
 
-      {/* Modal Container */}
       <div
         className="fixed inset-0 z-50 flex items-center justify-center"
         role="dialog"
@@ -54,17 +52,14 @@ const Modal: React.FC<ModalProps> = ({
             isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
           } ${className || ''}`}
         >
-          {/* Header with Close Button */}
-          <div className="flex justify-end p-4">
-            <button
-              onClick={onClose}
-              aria-label="Close"
-              className="border-2 border-transparent text-black transition-all duration-300 hover:rounded-full hover:border-[#fff] hover:bg-transparent"
-            >
-              <CgCloseO size={'32px'} color="#fff" />
-            </button>
-          </div>
-          {/* Scrollable Content */}
+          <button
+            onClick={onClose}
+            aria-label="Close"
+            className="absolute right-4 top-4 z-50 border-2 border-transparent text-black transition-all duration-300 hover:rounded-full hover:border-[#fff] hover:bg-transparent"
+          >
+            <CgCloseO size={'32px'} color="#fff" />
+          </button>
+
           <div
             className={`h-full overflow-y-auto p-6`}
             style={{
