@@ -9,23 +9,22 @@ export default function Info() {
         </h3>
 
         <div className="w-[100%] py-12 text-justify text-lg sm:px-[80px] ">
-          <p className="md:leading-12 p-2 text-justify leading-loose">
-            I am a software engineer based in Auckland, New Zealand. Currenlty
-            working as a Frontend developer at Spark. I've been actively
-            practicing and improving my skills in modern web technologies such
-            as React, TypeScript, and GraphQL to build dynamic, user-focused web
-            applications.
+          <p className="p-2 text-justify leading-loose">
+            I am a software engineer based in Auckland, New Zealand, currently
+            working as a Frontend Developer at Spark. I focus on building
+            dynamic web applications using modern technologies like React,
+            TypeScript, and GraphQL.
           </p>
           <p className="p-2 text-justify leading-loose">
-            I have experience working with design systems, where I have
-            developed a strong interest in web accessibility, focusing on
-            improving accessibility across the website while creating inclusive
-            experiences for all users.
+            Throughout my career, I’ve had the opportunity to contribute to the
+            development and maintenance of design system, a journey that
+            deepened my understanding of design principles and sparked a keen
+            interest in web accessibility.
           </p>
 
-          <p className="p-2 text-justify leading-loose md:leading-8">
+          <p className="p-2 text-justify leading-loose">
             With a strong curiosity and dedication to continuous learning, I
-            focus on solving intricate problems while delivering scalable,
+            focus on solving complex problems while delivering scalable,
             maintainable solutions and a proactive approach to learning new
             tools and technologies.
           </p>
