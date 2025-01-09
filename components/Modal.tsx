@@ -68,9 +68,9 @@ const Modal: React.FC<ModalProps> = ({
         <button
           onClick={onClose}
           aria-label="Close"
-          className={`border-red fixed right-8 top-8 z-50 text-black transition-all duration-300 hover:rounded-full hover:border-[#fff] hover:bg-transparent ${
-            hideCloseButton ? 'pointer-events-none opacity-0' : 'opacity-100'
-          }`}
+          className={`fixed right-8 top-8 z-50 text-black transition-all duration-300 hover:rounded-full hover:border-[#fff] hover:bg-transparent
+            ${hideCloseButton ? 'pointer-events-none opacity-0' : ''}
+            md:pointer-events-auto md:opacity-100`}
         >
           <CgCloseO size={'32px'} color="#fff" />
         </button>
