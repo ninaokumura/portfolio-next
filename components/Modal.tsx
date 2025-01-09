@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect, useRef } from 'react'
+import React, { ReactNode, useEffect, useRef, useState } from 'react'
 import { CgCloseO } from 'react-icons/cg'
 
 type ModalProps = {
@@ -15,6 +15,8 @@ const Modal: React.FC<ModalProps> = ({
   className,
 }) => {
   const modalRef = useRef<HTMLDivElement | null>(null)
+  const contentRef = useRef<HTMLDivElement | null>(null)
+  const [hideCloseButton, setHideCloseButton] = useState(false)
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
@@ -32,43 +34,55 @@ const Modal: React.FC<ModalProps> = ({
     }
   }, [onClose])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (contentRef.current) {
+        const isScrolled = contentRef.current.scrollTop > 0
+        setHideCloseButton(isScrolled)
+      }
+    }
+
+    const content = contentRef.current
+    content?.addEventListener('scroll', handleScroll)
+
+    return () => {
+      content?.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   if (!isOpen) return null
 
   return (
     <>
       <div
-        className="fixed inset-0 z-40 bg-black bg-opacity-50 backdrop-blur-sm"
+        className="fixed inset-0 z-40 bg-black bg-opacity-30 backdrop-blur-lg"
         onClick={onClose}
       />
 
       <div
-        className="fixed inset-0 z-50 flex items-center justify-center"
+        className="fixed inset-0 z-50 flex items-center justify-center pt-4"
         role="dialog"
         aria-modal="true"
+        ref={modalRef}
       >
-        <div
-          ref={modalRef}
-          className={`relative h-screen w-screen overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-violet-800 shadow-lg transition-all duration-300 ease-out sm:mx-4 sm:my-8 sm:max-h-[80vh] sm:max-w-6xl sm:rounded-xl ${
-            isOpen ? 'scale-100 opacity-100' : 'scale-90 opacity-0'
-          } ${className || ''}`}
+        <button
+          onClick={onClose}
+          aria-label="Close"
+          className={`border-red fixed right-8 top-8 z-50 text-black transition-all duration-300 hover:rounded-full hover:border-[#fff] hover:bg-transparent ${
+            hideCloseButton ? 'pointer-events-none opacity-0' : 'opacity-100'
+          }`}
         >
-          <button
-            onClick={onClose}
-            aria-label="Close"
-            className="absolute right-4 top-4 z-50 border-2 border-transparent text-black transition-all duration-300 hover:rounded-full hover:border-[#fff] hover:bg-transparent"
-          >
-            <CgCloseO size={'32px'} color="#fff" />
-          </button>
-
-          <div
-            className={`h-full overflow-y-auto p-6`}
-            style={{
-              scrollbarWidth: 'none', // Firefox
-              msOverflowStyle: 'none', // Internet Explorer
-            }}
-          >
-            {children}
-          </div>
+          <CgCloseO size={'32px'} color="#fff" />
+        </button>
+        <div
+          className="h-full w-full overflow-y-auto p-6"
+          style={{
+            scrollbarWidth: 'none', // Firefox
+            msOverflowStyle: 'none', // Internet Explorer
+          }}
+          ref={contentRef}
+        >
+          {children}
         </div>
       </div>
     </>

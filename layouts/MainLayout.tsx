@@ -61,7 +61,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
             }
           )}
         >
-          <div className="m-auto flex w-full justify-between p-8 align-middle">
+          <div className="m-auto flex w-full justify-between px-8 py-4 align-middle">
             <div className="flex items-center gap-4">
               <Link href="/">
                 <a className="flex items-end gap-4">
